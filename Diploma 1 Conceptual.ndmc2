@@ -1449,6 +1449,46 @@
             "b": 192,
             "a": 1
           }
+        },
+        {
+          "type": "note",
+          "name": "Note 5",
+          "x": 1190,
+          "y": 3410,
+          "width": 150,
+          "height": 150,
+          "text": "Связать не с планом, а дисциплинами плана",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "note",
+          "name": "Note 6",
+          "x": 2430,
+          "y": 2440,
+          "width": 230,
+          "height": 150,
+          "text": "От условных видов работ в принципе можно смело отказываться. Но нужно узнать какого черта в Магистерской работе 8 часов.",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
         }
       ],
       "layers": [],
