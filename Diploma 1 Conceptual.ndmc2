@@ -1,0 +1,1037 @@
+{
+  "paper": {
+    "name": "A4",
+    "leftMargin": 0.5,
+    "rightMargin": 0.5,
+    "topMargin": 0.5,
+    "bottomMargin": 0.5,
+    "isPortriat": true
+  },
+  "modelVersion": 2.01,
+  "defaultSchema": "Default",
+  "server": {
+    "objectType": "Server_CONCEPTUAL",
+    "name": "Default",
+    "schemas": [
+      {
+        "objectType": "Schema_CONCEPTUAL",
+        "name": "Default",
+        "tables": [
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Факультет",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Факультет_Специальность_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Специальность",
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Кафедра",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Кафедра_Факультет_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Факультет",
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Специальность",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Лицензия",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Учебный план",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Уровень подготовки",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Лицензированная специальность",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Лицензированная специальность_Учебный план_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Учебный план",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Область знаний",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Область знаний_Специальность_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Специальность",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Дисциплина",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Дисциплина_Учебный план_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Учебный план",
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Факультет-специальность",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Факультет-специальность_Лицензированная специальность_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Лицензированная специальность",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Факультет-специальность_Лицензия_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Лицензия",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Набор студентов по году набора",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Поток студентов_Учебный план_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Учебный план",
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Поток студентов по году набора_Лицензированная специальность_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Лицензированная специальность",
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Дисциплина Copy 1",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Entity 1",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Контингент",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Контингент_Контингент_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Контингент",
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Учебный план - дисциплина",
+            "oldName": "",
+            "foreignKeys": []
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "name": "Diagram 1",
+      "paperWidth": 3,
+      "paperHeight": 3,
+      "tableFont": "Arial Unicode MS",
+      "tableFontSize": 14,
+      "isBalckWhite": false,
+      "showDBSchemaName": false,
+      "showViewRelations": true,
+      "notation": "crowsfoot",
+      "showFieldComment": false,
+      "showTableComment": false,
+      "shapes": [
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Факультет",
+          "x": 270,
+          "y": 240,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Кафедра",
+          "x": 0,
+          "y": 690,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Специальность",
+          "x": 700,
+          "y": 500,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Лицензия",
+          "x": 1310,
+          "y": 530,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "note",
+          "name": "Лицензия 1",
+          "x": 1460,
+          "y": 390,
+          "width": 220,
+          "height": 150,
+          "text": "Лицензия выдается на специальность факультета по уровню подготовки\r\n\r\n(За рамками)\r\n\r\nДопуск ",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Учебный план",
+          "x": 1100,
+          "y": 800,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "note",
+          "name": "Учебный план 1",
+          "x": 1260,
+          "y": 670,
+          "width": 280,
+          "height": 150,
+          "text": "Имеет год и делается на поток студентов\r\n\r\n+ уровень подготовки\r\n\r\nПо лицензированной специальности на факультете",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Набор студентов по году набора",
+          "x": 820,
+          "y": 800,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "note",
+          "name": "Набор студентов",
+          "x": 590,
+          "y": 780,
+          "width": 230,
+          "height": 150,
+          "text": "Поток студентов делается на специальность факультета\r\n\r\n+ уровень подготовки",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Лицензированная специальность",
+          "x": 940,
+          "y": 490,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "note",
+          "name": "Факультет-специальность",
+          "x": 920,
+          "y": 170,
+          "width": 290,
+          "height": 190,
+          "text": "Лицензированная специальность - специальность на факультете, на которую выдана лицензия\r\n\r\nСпециализация - специальность с другим набором спецкурсов(release #2)",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Область знаний",
+          "x": 350,
+          "y": 500,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "note",
+          "name": "Набор студентов Copy 1",
+          "x": 800,
+          "y": 770,
+          "width": 230,
+          "height": 50,
+          "text": "Форма обучения(денная)",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Дисциплина",
+          "x": 0,
+          "y": 1130,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Факультет-специальность",
+          "x": 760,
+          "y": 230,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "note",
+          "name": "Note 1",
+          "x": 690,
+          "y": 10,
+          "width": 150,
+          "height": 150,
+          "text": "Уровень подготовки - перечисление\r\n",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "note",
+          "name": "К",
+          "x": 100,
+          "y": 840,
+          "width": 230,
+          "height": 240,
+          "text": "Кафедра привязывается к дисциплине при составлении рабочего плана.\r\n\r\nНа такой-то год.\r\n\r\nШифр в учебном плане и рабочем плане по этому плану одинаков.\r\n\r\n",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "note",
+          "name": "Учп-дисц",
+          "x": 400,
+          "y": 770,
+          "width": 150,
+          "height": 150,
+          "text": "Год плана, шифр, название",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Контингент",
+          "x": 820,
+          "y": 980,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "note",
+          "name": "Контингент",
+          "x": 970,
+          "y": 1130,
+          "width": 150,
+          "height": 150,
+          "text": "Контингент могут дробить и объединять как угодно\r\n",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "note",
+          "name": "Note 2",
+          "x": 1210,
+          "y": 970,
+          "width": 200,
+          "height": 190,
+          "text": "В рабочем плане привязка к кафедре кто что читает.\r\n\r\nДополнительные формы контроля.",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "note",
+          "name": "Note 2 Copy 1",
+          "x": 400,
+          "y": 1010,
+          "width": 350,
+          "height": 190,
+          "text": "Дисциплина, на каком курсе читается, на каком семестре читается\r\n\r\nДисц Уч-Пл Курс Семестр Кол-во-часов\r\n\r\n1 2 1 1 2",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Учебный план - дисциплина",
+          "x": 360,
+          "y": 920,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        }
+      ],
+      "layers": [],
+      "relations": [
+        {
+          "name": "fk_Кафедра_Факультет_1",
+          "sourceTableName": "Кафедра",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 70,
+              "y": 675
+            },
+            {
+              "x": 70,
+              "y": 290
+            },
+            {
+              "x": 255,
+              "y": 290
+            }
+          ],
+          "label": {
+            "x": 72,
+            "y": 635,
+            "width": 175,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Факультет_Специальность_1",
+          "sourceTableName": "Факультет",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 485,
+              "y": 290
+            },
+            {
+              "x": 800,
+              "y": 290
+            },
+            {
+              "x": 800,
+              "y": 485
+            }
+          ],
+          "label": {
+            "x": 475,
+            "y": 242,
+            "width": 216,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Поток студентов_Учебный план_1",
+          "sourceTableName": "Набор студентов по году набора",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1035,
+              "y": 850
+            },
+            {
+              "x": 1025,
+              "y": 850
+            },
+            {
+              "x": 1025,
+              "y": 850
+            },
+            {
+              "x": 1085,
+              "y": 850
+            }
+          ],
+          "label": {
+            "x": 1025,
+            "y": 802,
+            "width": 249,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Поток студентов по году набора_Лицензированная специальность_1",
+          "sourceTableName": "Набор студентов по году набора",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 940,
+              "y": 785
+            },
+            {
+              "x": 940,
+              "y": 740
+            },
+            {
+              "x": 990,
+              "y": 605
+            }
+          ],
+          "label": {
+            "x": 942,
+            "y": 745,
+            "width": 480,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Лицензированная специальность_Учебный план_1",
+          "sourceTableName": "Лицензированная специальность",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1100,
+              "y": 605
+            },
+            {
+              "x": 1100,
+              "y": 740
+            },
+            {
+              "x": 1200,
+              "y": 785
+            }
+          ],
+          "label": {
+            "x": 1102,
+            "y": 545,
+            "width": 363,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Область знаний_Специальность_1",
+          "sourceTableName": "Область знаний",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 565,
+              "y": 550
+            },
+            {
+              "x": 625,
+              "y": 550
+            },
+            {
+              "x": 625,
+              "y": 550
+            },
+            {
+              "x": 685,
+              "y": 550
+            }
+          ],
+          "label": {
+            "x": 555,
+            "y": 502,
+            "width": 254,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Факультет-специальность_Лицензированная специальность_1",
+          "sourceTableName": "Факультет-специальность",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 975,
+              "y": 280
+            },
+            {
+              "x": 1040,
+              "y": 280
+            },
+            {
+              "x": 1040,
+              "y": 475
+            }
+          ],
+          "label": {
+            "x": 965,
+            "y": 232,
+            "width": 439,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Дисциплина_Учебный план_1",
+          "sourceTableName": "Дисциплина",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 215,
+              "y": 1180
+            },
+            {
+              "x": 390,
+              "y": 1180
+            },
+            {
+              "x": 390,
+              "y": 950
+            },
+            {
+              "x": 1200,
+              "y": 950
+            },
+            {
+              "x": 1200,
+              "y": 915
+            }
+          ],
+          "label": {
+            "x": 205,
+            "y": 1132,
+            "width": 222,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Контингент_Контингент_1",
+          "sourceTableName": "Контингент",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1035,
+              "y": 1000
+            },
+            {
+              "x": 1035,
+              "y": 1060
+            }
+          ],
+          "label": {
+            "x": 1025,
+            "y": 952,
+            "width": 194,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Факультет-специальность_Лицензия_1",
+          "sourceTableName": "Факультет-специальность",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 975,
+              "y": 290
+            },
+            {
+              "x": 1410,
+              "y": 290
+            },
+            {
+              "x": 1410,
+              "y": 515
+            }
+          ],
+          "label": {
+            "x": 965,
+            "y": 242,
+            "width": 282,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        }
+      ],
+      "viewRelations": []
+    }
+  ]
+}
