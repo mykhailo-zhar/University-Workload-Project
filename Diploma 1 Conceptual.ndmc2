@@ -311,9 +311,18 @@
                 "objectType": "ForeignKey_CONCEPTUAL",
                 "name": "fk_Контингент_Годовой объём по дисциплине_1",
                 "referencedSchema": "Default",
-                "referencedTable": "Объём по виду работы дисциплины",
+                "referencedTable": "Контингент дисциплиы",
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Контингент_Контингент_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Контингент",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
                 "oldName": ""
               }
             ]
@@ -665,27 +674,9 @@
             "foreignKeys": [
               {
                 "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Рабочий план_Рабочая дисциплина_1",
+                "name": "fk_Рабочий план_Привязанная дисциплина_1",
                 "referencedSchema": "Default",
-                "referencedTable": "Рабочая дисциплина",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Рабочий план_Годовой объём по дисциплине_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Объём по виду работы дисциплины",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Рабочий план_Нагрузка по виду работы дисциплины_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Нагрузка по виду работы дисциплины",
+                "referencedTable": "Привязанная дисциплина",
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
                 "oldName": ""
@@ -697,24 +688,6 @@
             "name": "Вид работы",
             "oldName": "",
             "foreignKeys": [
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Вид работы_Виды работ учебной дисциплины_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Виды работ учебной дисциплины",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Вид работы_Виды работ рабочей дисциплины_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Виды работ рабочей дисциплины",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "oldName": ""
-              },
               {
                 "objectType": "ForeignKey_CONCEPTUAL",
                 "name": "fk_Вид работы_Виды работ дисциплины_1",
@@ -779,6 +752,15 @@
                 "sourceCardinality": "ManyRelationship",
                 "targetCardinality": "OneAndOnlyOneRelationship",
                 "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Виды работ учебной дисциплины_Виды работ семестровой рабочей дисциплины_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Виды работ семестровой рабочей дисциплины",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
               }
             ]
           },
@@ -800,41 +782,19 @@
           },
           {
             "objectType": "Table_CONCEPTUAL",
-            "name": "Рабочая дисциплина",
-            "oldName": "",
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Рабочая дисциплина_Виды работ рабочей дисциплины_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Виды работ рабочей дисциплины",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "oldName": ""
-              }
-            ]
-          },
-          {
-            "objectType": "Table_CONCEPTUAL",
             "name": "Привязанная дисциплина",
             "oldName": "",
             "foreignKeys": [
               {
                 "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Привязанная рабочая дисциплина_Рабочая дисциплина_1",
+                "name": "fk_Привязанная дисциплина_Семестровая рабочая дисциплина_1",
                 "referencedSchema": "Default",
-                "referencedTable": "Рабочая дисциплина",
+                "referencedTable": "Семестровая рабочая дисциплина",
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
                 "oldName": ""
               }
             ]
-          },
-          {
-            "objectType": "Table_CONCEPTUAL",
-            "name": "Виды работ рабочей дисциплины",
-            "oldName": "",
-            "foreignKeys": []
           },
           {
             "objectType": "Table_CONCEPTUAL",
@@ -859,15 +819,6 @@
             "foreignKeys": [
               {
                 "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Виды работ дисциплины_Годовой объём по дисциплине_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Объём по виду работы дисциплины",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
                 "name": "fk_Виды работ дисциплины_Условные виды работ_1",
                 "referencedSchema": "Default",
                 "referencedTable": "Условные виды работ",
@@ -877,11 +828,29 @@
               },
               {
                 "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Виды работ дисциплины_Нагрузка по виду работы дисциплины_1",
+                "name": "fk_Виды работ дисциплины_Виды работ учебной дисциплины_1",
                 "referencedSchema": "Default",
-                "referencedTable": "Нагрузка по виду работы дисциплины",
+                "referencedTable": "Виды работ учебной дисциплины",
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Виды работ дисциплины_Виды работ семестровой рабочей дисциплины_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Виды работ семестровой рабочей дисциплины",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Виды работ дисциплины_Нагрузка дисциплины_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Нагрузка дисциплины",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
                 "oldName": ""
               }
             ]
@@ -889,12 +858,6 @@
           {
             "objectType": "Table_CONCEPTUAL",
             "name": "Условные виды работ",
-            "oldName": "",
-            "foreignKeys": []
-          },
-          {
-            "objectType": "Table_CONCEPTUAL",
-            "name": "Объём по виду работы дисциплины",
             "oldName": "",
             "foreignKeys": []
           },
@@ -917,6 +880,24 @@
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
                 "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Преподаватель_Преподаватель-Контингент_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Преподаватель-Контингент",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Преподаватель_Контингент дисциплиы_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Контингент дисциплиы",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
               }
             ]
           },
@@ -935,6 +916,84 @@
                 "oldName": ""
               }
             ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Семестровая рабочая дисциплина",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Рабочая дисциплина_Виды работ рабочей дисциплины_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Виды работ семестровой рабочей дисциплины",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Семестровая рабочая дисциплина_Контингент дисциплиы_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Контингент дисциплиы",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Виды работ семестровой рабочей дисциплины",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Виды работ семестровой рабочей дисциплины_Нагрузка дисциплины_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Нагрузка дисциплины",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Контингент дисциплиы",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Контингент дисциплиы_Нагрузка дисциплины_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Нагрузка дисциплины",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Контингент дисциплиы_Преподаватель-Контингент_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Преподаватель-Контингент",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Нагрузка дисциплины",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Преподаватель-Контингент",
+            "oldName": "",
+            "foreignKeys": []
           }
         ]
       }
@@ -991,7 +1050,7 @@
           "schemaName": "Default",
           "tableName": "Специальность",
           "x": 1320,
-          "y": 1810,
+          "y": 2000,
           "width": 200,
           "height": 100,
           "isBold": false,
@@ -1055,7 +1114,7 @@
           "schemaName": "Default",
           "tableName": "Область знаний",
           "x": 980,
-          "y": 1810,
+          "y": 2000,
           "width": 200,
           "height": 100,
           "isBold": false,
@@ -1165,9 +1224,9 @@
         {
           "type": "table",
           "schemaName": "Default",
-          "tableName": "Рабочая дисциплина",
-          "x": 1670,
-          "y": 2940,
+          "tableName": "Семестровая рабочая дисциплина",
+          "x": 2040,
+          "y": 2950,
           "width": 200,
           "height": 100,
           "isBold": false,
@@ -1214,8 +1273,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Виды работ учебной дисциплины",
-          "x": 2040,
-          "y": 2400,
+          "x": 2300,
+          "y": 2380,
           "width": 200,
           "height": 100,
           "isBold": false,
@@ -1231,43 +1290,7 @@
           "schemaName": "Default",
           "tableName": "Привязанная дисциплина",
           "x": 1670,
-          "y": 3120,
-          "width": 200,
-          "height": 100,
-          "isBold": false,
-          "titleColor": {
-            "r": 190,
-            "g": 220,
-            "b": 255,
-            "a": 1
-          }
-        },
-        {
-          "type": "note",
-          "name": "Note 1",
-          "x": 1670,
-          "y": 3000,
-          "width": 200,
-          "height": 240,
-          "text": "Привязку дисциплины к конкретной кафедре можно использовать неединожды. Нужно ли учитывать год этой привязки?\r\nЕсли да, то смысла нормализировать эту таблицу нет\r\n",
-          "style": "note",
-          "noteColor": {
-            "r": 255,
-            "g": 232,
-            "b": 107,
-            "a": 1
-          },
-          "fontName": "Arial Unicode MS",
-          "fontSize": 14,
-          "isFontBold": false,
-          "isFontItalic": false
-        },
-        {
-          "type": "table",
-          "schemaName": "Default",
-          "tableName": "Виды работ рабочей дисциплины",
-          "x": 2040,
-          "y": 2940,
+          "y": 2990,
           "width": 200,
           "height": 100,
           "isBold": false,
@@ -1281,16 +1304,16 @@
         {
           "type": "table",
           "schemaName": "Default",
-          "tableName": "Группы контингента",
-          "x": 850,
-          "y": 2720,
+          "tableName": "Виды работ семестровой рабочей дисциплины",
+          "x": 2310,
+          "y": 2950,
           "width": 200,
           "height": 100,
           "isBold": false,
           "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
+            "r": 190,
+            "g": 220,
+            "b": 255,
             "a": 1
           }
         },
@@ -1313,61 +1336,9 @@
         {
           "type": "table",
           "schemaName": "Default",
-          "tableName": "Объём по виду работы дисциплины",
-          "x": 1320,
-          "y": 3330,
-          "width": 200,
-          "height": 100,
-          "isBold": false,
-          "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
-            "a": 1
-          }
-        },
-        {
-          "type": "table",
-          "schemaName": "Default",
-          "tableName": "Условные виды работ",
-          "x": 2540,
-          "y": 2550,
-          "width": 200,
-          "height": 100,
-          "isBold": false,
-          "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
-            "a": 1
-          }
-        },
-        {
-          "type": "note",
-          "name": "Note 2",
-          "x": 3050,
-          "y": 2460,
-          "width": 290,
-          "height": 440,
-          "text": "БИУСЛОВНЕНЬКО:\r\nУ одного вида работы может быть, а может и не быть вид работы с которым он будет связан. \r\n\r\nВ то же время оба вида работы, если они связаны, должны быть связаны.\r\n\r\nСвязь обуславливается тем, что один вид работы может принимать на себя часы другого. Если у вида работы, будет много перенимающих, то как указать кому сколько часов?\r\n\r\nПОЭТОМУ:\r\nУ одного вида работы, можнт быть много условных видов работы, а у одного условного вида работы всегда будет вид работы с которым он связан.",
-          "style": "note",
-          "noteColor": {
-            "r": 255,
-            "g": 232,
-            "b": 107,
-            "a": 1
-          },
-          "fontName": "Arial Unicode MS",
-          "fontSize": 14,
-          "isFontBold": false,
-          "isFontItalic": false
-        },
-        {
-          "type": "table",
-          "schemaName": "Default",
-          "tableName": "Нагрузка по виду работы дисциплины",
-          "x": 1320,
-          "y": 3460,
+          "tableName": "Контингент дисциплиы",
+          "x": 2040,
+          "y": 3120,
           "width": 200,
           "height": 100,
           "isBold": false,
@@ -1395,46 +1366,6 @@
           }
         },
         {
-          "type": "note",
-          "name": "Note 3",
-          "x": 1510,
-          "y": 3370,
-          "width": 190,
-          "height": 150,
-          "text": "Скорее всего это представления, причем материализованные",
-          "style": "note",
-          "noteColor": {
-            "r": 255,
-            "g": 232,
-            "b": 107,
-            "a": 1
-          },
-          "fontName": "Arial Unicode MS",
-          "fontSize": 14,
-          "isFontBold": false,
-          "isFontItalic": false
-        },
-        {
-          "type": "note",
-          "name": "Note 4",
-          "x": 2220,
-          "y": 2930,
-          "width": 150,
-          "height": 150,
-          "text": "Сумма часов может быть меньше учебного плана\r\n",
-          "style": "note",
-          "noteColor": {
-            "r": 255,
-            "g": 232,
-            "b": 107,
-            "a": 1
-          },
-          "fontName": "Arial Unicode MS",
-          "fontSize": 14,
-          "isFontBold": false,
-          "isFontItalic": false
-        },
-        {
           "type": "table",
           "schemaName": "Default",
           "tableName": "Должность",
@@ -1451,44 +1382,20 @@
           }
         },
         {
-          "type": "note",
-          "name": "Note 5",
-          "x": 1190,
-          "y": 3410,
-          "width": 150,
-          "height": 150,
-          "text": "Связать не с планом, а дисциплинами плана",
-          "style": "note",
-          "noteColor": {
-            "r": 255,
-            "g": 232,
-            "b": 107,
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Нагрузка дисциплины",
+          "x": 2310,
+          "y": 3120,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
             "a": 1
-          },
-          "fontName": "Arial Unicode MS",
-          "fontSize": 14,
-          "isFontBold": false,
-          "isFontItalic": false
-        },
-        {
-          "type": "note",
-          "name": "Note 6",
-          "x": 2430,
-          "y": 2440,
-          "width": 230,
-          "height": 150,
-          "text": "От условных видов работ в принципе можно смело отказываться. Но нужно узнать какого черта в Магистерской работе 8 часов.",
-          "style": "note",
-          "noteColor": {
-            "r": 255,
-            "g": 232,
-            "b": 107,
-            "a": 1
-          },
-          "fontName": "Arial Unicode MS",
-          "fontSize": 14,
-          "isFontBold": false,
-          "isFontItalic": false
+          }
         }
       ],
       "layers": [],
@@ -1582,24 +1489,24 @@
           "vertices": [
             {
               "x": 1195,
-              "y": 1860
+              "y": 2050
             },
             {
               "x": 1250,
-              "y": 1860
+              "y": 2050
             },
             {
               "x": 1250,
-              "y": 1860
+              "y": 2050
             },
             {
               "x": 1305,
-              "y": 1860
+              "y": 2050
             }
           ],
           "label": {
             "x": 1185,
-            "y": 1812,
+            "y": 2002,
             "width": 254,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -2058,7 +1965,7 @@
           "vertices": [
             {
               "x": 1420,
-              "y": 1925
+              "y": 2115
             },
             {
               "x": 1420,
@@ -2075,7 +1982,7 @@
           ],
           "label": {
             "x": 1428,
-            "y": 1915,
+            "y": 2105,
             "width": 319,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -2099,16 +2006,12 @@
           "visible": true,
           "vertices": [
             {
-              "x": 2140,
-              "y": 2515
+              "x": 2285,
+              "y": 2430
             },
             {
               "x": 2140,
-              "y": 2530
-            },
-            {
-              "x": 2140,
-              "y": 2520
+              "y": 2430
             },
             {
               "x": 2140,
@@ -2116,93 +2019,9 @@
             }
           ],
           "label": {
-            "x": 2148,
-            "y": 2505,
+            "x": 2301,
+            "y": 2432,
             "width": 407,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Вид работы_Виды работ учебной дисциплины_1",
-          "sourceTableName": "Вид работы",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 2755,
-              "y": 2450
-            },
-            {
-              "x": 2450,
-              "y": 2450
-            },
-            {
-              "x": 2450,
-              "y": 2450
-            },
-            {
-              "x": 2255,
-              "y": 2450
-            }
-          ],
-          "label": {
-            "x": 2420,
-            "y": 2402,
-            "width": 345,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Рабочий план_Рабочая дисциплина_1",
-          "sourceTableName": "Рабочий план",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1535,
-              "y": 2990
-            },
-            {
-              "x": 1590,
-              "y": 2990
-            },
-            {
-              "x": 1590,
-              "y": 2990
-            },
-            {
-              "x": 1655,
-              "y": 2990
-            }
-          ],
-          "label": {
-            "x": 1525,
-            "y": 2942,
-            "width": 279,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
@@ -2230,11 +2049,11 @@
             },
             {
               "x": 600,
-              "y": 3170
+              "y": 3060
             },
             {
               "x": 1655,
-              "y": 3170
+              "y": 3060
             }
           ],
           "label": {
@@ -2272,11 +2091,11 @@
             },
             {
               "x": 2650,
-              "y": 3160
+              "y": 3070
             },
             {
               "x": 1885,
-              "y": 3160
+              "y": 3070
             }
           ],
           "label": {
@@ -2298,117 +2117,33 @@
           }
         },
         {
-          "name": "fk_Привязанная рабочая дисциплина_Рабочая дисциплина_1",
-          "sourceTableName": "Привязанная дисциплина",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1770,
-              "y": 3105
-            },
-            {
-              "x": 1770,
-              "y": 3080
-            },
-            {
-              "x": 1770,
-              "y": 3080
-            },
-            {
-              "x": 1770,
-              "y": 3055
-            }
-          ],
-          "label": {
-            "x": 1778,
-            "y": 3075,
-            "width": 416,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
           "name": "fk_Рабочая дисциплина_Виды работ рабочей дисциплины_1",
-          "sourceTableName": "Рабочая дисциплина",
+          "sourceTableName": "Семестровая рабочая дисциплина",
           "sourceSchemaName": "Default",
           "lineWidth": 1,
           "visible": true,
           "vertices": [
-            {
-              "x": 1885,
-              "y": 2990
-            },
-            {
-              "x": 1960,
-              "y": 2990
-            },
-            {
-              "x": 1960,
-              "y": 2990
-            },
-            {
-              "x": 2025,
-              "y": 2990
-            }
-          ],
-          "label": {
-            "x": 1875,
-            "y": 2942,
-            "width": 408,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Вид работы_Виды работ рабочей дисциплины_1",
-          "sourceTableName": "Вид работы",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 2755,
-              "y": 2480
-            },
-            {
-              "x": 2420,
-              "y": 2480
-            },
-            {
-              "x": 2420,
-              "y": 2990
-            },
             {
               "x": 2255,
-              "y": 2990
+              "y": 3000
+            },
+            {
+              "x": 2070,
+              "y": 3000
+            },
+            {
+              "x": 2070,
+              "y": 3000
+            },
+            {
+              "x": 2295,
+              "y": 3000
             }
           ],
           "label": {
-            "x": 2419,
-            "y": 2432,
-            "width": 346,
+            "x": 2245,
+            "y": 2952,
+            "width": 408,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
@@ -2432,71 +2167,29 @@
           "vertices": [
             {
               "x": 1410,
-              "y": 1795
+              "y": 1985
             },
             {
               "x": 1410,
-              "y": 1770
+              "y": 1960
             },
             {
               "x": 1570,
-              "y": 1770
+              "y": 1960
             },
             {
               "x": 1570,
-              "y": 1870
+              "y": 2060
             },
             {
               "x": 1535,
-              "y": 1870
+              "y": 2060
             }
           ],
           "label": {
             "x": 1412,
-            "y": 1755,
+            "y": 1945,
             "width": 250,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Контингент_Группы контингента_1",
-          "sourceTableName": "Контингент",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1080,
-              "y": 2665
-            },
-            {
-              "x": 1080,
-              "y": 2690
-            },
-            {
-              "x": 940,
-              "y": 2690
-            },
-            {
-              "x": 940,
-              "y": 2705
-            }
-          ],
-          "label": {
-            "x": 1088,
-            "y": 2655,
-            "width": 253,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
@@ -2596,90 +2289,6 @@
           }
         },
         {
-          "name": "fk_Виды работ дисциплины_Годовой объём по дисциплине_1",
-          "sourceTableName": "Виды работ дисциплины",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 2985,
-              "y": 2600
-            },
-            {
-              "x": 3030,
-              "y": 2600
-            },
-            {
-              "x": 3030,
-              "y": 3380
-            },
-            {
-              "x": 1535,
-              "y": 3380
-            }
-          ],
-          "label": {
-            "x": 2975,
-            "y": 2552,
-            "width": 415,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Рабочий план_Годовой объём по дисциплине_1",
-          "sourceTableName": "Рабочий план",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1420,
-              "y": 3055
-            },
-            {
-              "x": 1420,
-              "y": 3185
-            },
-            {
-              "x": 1420,
-              "y": 3185
-            },
-            {
-              "x": 1420,
-              "y": 3315
-            }
-          ],
-          "label": {
-            "x": 1428,
-            "y": 3045,
-            "width": 345,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
           "name": "fk_Контингент_Годовой объём по дисциплине_1",
           "sourceTableName": "Контингент",
           "sourceSchemaName": "Default",
@@ -2696,215 +2305,17 @@
             },
             {
               "x": 1230,
-              "y": 3380
+              "y": 3170
             },
             {
-              "x": 1305,
-              "y": 3380
+              "x": 2025,
+              "y": 3170
             }
           ],
           "label": {
             "x": 1185,
             "y": 2582,
             "width": 326,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Виды работ дисциплины_Условные виды работ_1",
-          "sourceTableName": "Виды работ дисциплины",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 2755,
-              "y": 2600
-            },
-            {
-              "x": 2755,
-              "y": 2600
-            },
-            {
-              "x": 2755,
-              "y": 2600
-            },
-            {
-              "x": 2755,
-              "y": 2600
-            }
-          ],
-          "label": {
-            "x": 2411,
-            "y": 2552,
-            "width": 354,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Рабочий план_Нагрузка по виду работы дисциплины_1",
-          "sourceTableName": "Рабочий план",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1440,
-              "y": 3055
-            },
-            {
-              "x": 1440,
-              "y": 3445
-            }
-          ],
-          "label": {
-            "x": 1448,
-            "y": 3045,
-            "width": 389,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Группы контингента_Нагрузка по виду работы дисциплины_1",
-          "sourceTableName": "Группы контингента",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 950,
-              "y": 2835
-            },
-            {
-              "x": 950,
-              "y": 3500
-            },
-            {
-              "x": 1305,
-              "y": 3500
-            }
-          ],
-          "label": {
-            "x": 952,
-            "y": 2775,
-            "width": 429,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Виды работ дисциплины_Нагрузка по виду работы дисциплины_1",
-          "sourceTableName": "Виды работ дисциплины",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 2985,
-              "y": 2620
-            },
-            {
-              "x": 3000,
-              "y": 2620
-            },
-            {
-              "x": 3000,
-              "y": 3510
-            },
-            {
-              "x": 1535,
-              "y": 3510
-            }
-          ],
-          "label": {
-            "x": 2516,
-            "y": 2572,
-            "width": 459,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Преподаватель_Нагрузка по виду работы дисциплины_1",
-          "sourceTableName": "Преподаватель",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 745,
-              "y": 3520
-            },
-            {
-              "x": 1020,
-              "y": 3520
-            },
-            {
-              "x": 1020,
-              "y": 3520
-            },
-            {
-              "x": 1305,
-              "y": 3520
-            }
-          ],
-          "label": {
-            "x": 735,
-            "y": 3472,
-            "width": 399,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
@@ -2969,18 +2380,468 @@
           "visible": true,
           "vertices": [
             {
-              "x": 610,
+              "x": 640,
               "y": 2805
             },
             {
-              "x": 610,
+              "x": 640,
               "y": 3435
             }
           ],
           "label": {
-            "x": 618,
+            "x": 648,
             "y": 2795,
             "width": 210,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Виды работ дисциплины_Виды работ учебной дисциплины_1",
+          "sourceTableName": "Виды работ дисциплины",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2755,
+              "y": 2590
+            },
+            {
+              "x": 2650,
+              "y": 2590
+            },
+            {
+              "x": 2650,
+              "y": 2430
+            },
+            {
+              "x": 2515,
+              "y": 2430
+            }
+          ],
+          "label": {
+            "x": 2335,
+            "y": 2542,
+            "width": 430,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Рабочий план_Привязанная дисциплина_1",
+          "sourceTableName": "Рабочий план",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1535,
+              "y": 3010
+            },
+            {
+              "x": 1570,
+              "y": 3010
+            },
+            {
+              "x": 1570,
+              "y": 3010
+            },
+            {
+              "x": 1655,
+              "y": 3010
+            }
+          ],
+          "label": {
+            "x": 1525,
+            "y": 2962,
+            "width": 310,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Привязанная дисциплина_Семестровая рабочая дисциплина_1",
+          "sourceTableName": "Привязанная дисциплина",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1885,
+              "y": 3010
+            },
+            {
+              "x": 1925,
+              "y": 3010
+            },
+            {
+              "x": 1925,
+              "y": 3010
+            },
+            {
+              "x": 2025,
+              "y": 3010
+            }
+          ],
+          "label": {
+            "x": 1875,
+            "y": 2962,
+            "width": 448,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Виды работ дисциплины_Виды работ семестровой рабочей дисциплины_1",
+          "sourceTableName": "Виды работ дисциплины",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2755,
+              "y": 2610
+            },
+            {
+              "x": 2460,
+              "y": 2610
+            },
+            {
+              "x": 2460,
+              "y": 2935
+            }
+          ],
+          "label": {
+            "x": 2245,
+            "y": 2562,
+            "width": 520,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Виды работ учебной дисциплины_Виды работ семестровой рабочей дисциплины_1",
+          "sourceTableName": "Виды работ учебной дисциплины",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2370,
+              "y": 2495
+            },
+            {
+              "x": 2370,
+              "y": 2935
+            }
+          ],
+          "label": {
+            "x": 2378,
+            "y": 2485,
+            "width": 578,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Контингент_Контингент_1",
+          "sourceTableName": "Контингент",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 965,
+              "y": 2590
+            },
+            {
+              "x": 940,
+              "y": 2590
+            },
+            {
+              "x": 940,
+              "y": 2510
+            },
+            {
+              "x": 1020,
+              "y": 2510
+            },
+            {
+              "x": 1020,
+              "y": 2535
+            }
+          ],
+          "label": {
+            "x": 975,
+            "y": 2542,
+            "width": 194,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Семестровая рабочая дисциплина_Контингент дисциплиы_1",
+          "sourceTableName": "Семестровая рабочая дисциплина",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2140,
+              "y": 3065
+            },
+            {
+              "x": 2140,
+              "y": 3085
+            },
+            {
+              "x": 2140,
+              "y": 3085
+            },
+            {
+              "x": 2140,
+              "y": 3105
+            }
+          ],
+          "label": {
+            "x": 2148,
+            "y": 3055,
+            "width": 428,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Контингент дисциплиы_Нагрузка дисциплины_1",
+          "sourceTableName": "Контингент дисциплиы",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2255,
+              "y": 3170
+            },
+            {
+              "x": 2275,
+              "y": 3170
+            },
+            {
+              "x": 2275,
+              "y": 3170
+            },
+            {
+              "x": 2295,
+              "y": 3170
+            }
+          ],
+          "label": {
+            "x": 2245,
+            "y": 3122,
+            "width": 341,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Виды работ семестровой рабочей дисциплины_Нагрузка дисциплины_1",
+          "sourceTableName": "Виды работ семестровой рабочей дисциплины",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2410,
+              "y": 3065
+            },
+            {
+              "x": 2410,
+              "y": 3085
+            },
+            {
+              "x": 2410,
+              "y": 3085
+            },
+            {
+              "x": 2410,
+              "y": 3105
+            }
+          ],
+          "label": {
+            "x": 2418,
+            "y": 3055,
+            "width": 501,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Виды работ дисциплины_Нагрузка дисциплины_1",
+          "sourceTableName": "Виды работ дисциплины",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2755,
+              "y": 2630
+            },
+            {
+              "x": 2560,
+              "y": 2630
+            },
+            {
+              "x": 2560,
+              "y": 3180
+            },
+            {
+              "x": 2525,
+              "y": 3180
+            }
+          ],
+          "label": {
+            "x": 2412,
+            "y": 2582,
+            "width": 353,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Преподаватель_Контингент дисциплиы_1",
+          "sourceTableName": "Преподаватель",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 745,
+              "y": 3500
+            },
+            {
+              "x": 2140,
+              "y": 3500
+            },
+            {
+              "x": 2140,
+              "y": 3235
+            }
+          ],
+          "label": {
+            "x": 735,
+            "y": 3452,
+            "width": 300,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
