@@ -26,7 +26,7 @@
                 "objectType": "ForeignKey_CONCEPTUAL",
                 "name": "fk_Факультет_Факультет-специальность_1",
                 "referencedSchema": "Default",
-                "referencedTable": "Факультет-специальность",
+                "referencedTable": "Образовательная программа",
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
                 "oldName": ""
@@ -64,6 +64,15 @@
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
                 "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Кафедра_Привязанная дисциплина Copy 1_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Квази дисциплина",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
               }
             ]
           },
@@ -76,7 +85,7 @@
                 "objectType": "ForeignKey_CONCEPTUAL",
                 "name": "fk_Специальность_Факультет-специальность_1",
                 "referencedSchema": "Default",
-                "referencedTable": "Факультет-специальность",
+                "referencedTable": "Образовательная программа",
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
                 "oldName": ""
@@ -183,91 +192,14 @@
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
                 "oldName": ""
-              }
-            ]
-          },
-          {
-            "objectType": "Table_CONCEPTUAL",
-            "name": "Факультет-специальность",
-            "oldName": "",
-            "foreignKeys": [
+              },
               {
                 "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Факультет-специальность_Лицензированная специальность_1",
+                "name": "fk_Дисциплина_Привязанная дисциплина Copy 1_1",
                 "referencedSchema": "Default",
-                "referencedTable": "Лицензированная специальность",
+                "referencedTable": "Квази дисциплина",
                 "sourceCardinality": "NoneRelationship",
                 "targetCardinality": "NoneRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Факультет-специальность_Лицензия_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Лицензия",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Факультет-специальность_Набор студентов по году набора_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Набор студентов по году набора",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Факультет-специальность_Учебный план_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Учебный план",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "oldName": ""
-              }
-            ]
-          },
-          {
-            "objectType": "Table_CONCEPTUAL",
-            "name": "Набор студентов по году набора",
-            "oldName": "",
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Поток студентов_Учебный план_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Учебный план",
-                "sourceCardinality": "ManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Поток студентов по году набора_Лицензированная специальность_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Лицензированная специальность",
-                "sourceCardinality": "ManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Набор студентов по году набора_Контингент_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Контингент",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Набор студентов по году набора_Рабочий план_1",
-                "referencedSchema": "Default",
-                "referencedTable": "Рабочий план",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
                 "oldName": ""
               }
             ]
@@ -687,6 +619,15 @@
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
                 "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Вид работы_Нормативы_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Нормативы",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
               }
             ]
           },
@@ -821,11 +762,11 @@
               },
               {
                 "objectType": "ForeignKey_CONCEPTUAL",
-                "name": "fk_Виды работ дисциплины_Нагрузка дисциплины_1",
+                "name": "fk_Виды работ дисциплины_Нагрузка чтения общая и преподавателя контингенту дисциплины Copy 1_1",
                 "referencedSchema": "Default",
-                "referencedTable": "Нагрузка дисциплины",
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
+                "referencedTable": "Нагрузка чтения общая и преподавателя контингенту дисциплины Copy 1",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
                 "oldName": ""
               }
             ]
@@ -871,7 +812,16 @@
                 "referencedSchema": "Default",
                 "referencedTable": "Чтение дисциплины контингенту",
                 "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Преподаватель_Чтение дисциплины контингенту Copy 1_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Чтение дисциплины контингенту Copy 1",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
                 "oldName": ""
               }
             ]
@@ -919,12 +869,6 @@
           },
           {
             "objectType": "Table_CONCEPTUAL",
-            "name": "Нагрузка дисциплины",
-            "oldName": "",
-            "foreignKeys": []
-          },
-          {
-            "objectType": "Table_CONCEPTUAL",
             "name": "Преподаватель-Контингент",
             "oldName": "",
             "foreignKeys": []
@@ -960,7 +904,7 @@
                 "objectType": "ForeignKey_CONCEPTUAL",
                 "name": "fk_Контингент дисциплиы_Нагрузка дисциплины_1",
                 "referencedSchema": "Default",
-                "referencedTable": "Нагрузка дисциплины",
+                "referencedTable": "Нагрузка чтения общая и преподавателя контингенту дисциплины",
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
                 "oldName": ""
@@ -970,6 +914,199 @@
                 "name": "fk_Контингент дисциплиы_Преподаватель-Контингент_1",
                 "referencedSchema": "Default",
                 "referencedTable": "Преподаватель-Контингент",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Образовательная программа",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Факультет-специальность_Лицензированная специальность_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Лицензированная специальность",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Факультет-специальность_Лицензия_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Лицензия",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Факультет-специальность_Учебный план_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Учебный план",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Уровни подготовки",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Уровни подготовки_Образовательная программа_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Образовательная программа",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Нормативы",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Нормативы Copy 1",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Контингент 2.0",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Поток студентов_Учебный план_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Учебный план",
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Поток студентов по году набора_Лицензированная специальность_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Лицензированная специальность",
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Набор студентов по году набора_Контингент_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Контингент",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Набор студентов по году набора_Рабочий план_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Рабочий план",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Контингент 2.0_Привязанная дисциплина Copy 1_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Квази дисциплина",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Нагрузка чтения общая и преподавателя контингенту дисциплины",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Нагрузка чтения общая и преподавателя контингенту дисциплины_Нагрузка вида работы семестровой рабочей дисциплины_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Нагрузка вида работы семестровой рабочей дисциплины",
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Чтение дисциплины контингенту Copy 1",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Контингент дисциплиы_Преподаватель-Контингент_1 Copy 1",
+                "referencedSchema": "Default",
+                "referencedTable": "Преподаватель-Контингент",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Чтение дисциплины контингенту Copy 1_Нагрузка чтения общая и преподавателя контингенту дисциплины Copy 1_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Нагрузка чтения общая и преподавателя контингенту дисциплины Copy 1",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Нагрузка чтения общая и преподавателя контингенту дисциплины Copy 1",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Квази дисциплина",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Квази дисциплина_Семестровая квазидисциплина_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Семестровая квазидисциплина",
+                "sourceCardinality": "NoneRelationship",
+                "targetCardinality": "NoneRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Семестровая квазидисциплина",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "fk_Семестровая квазидисциплина_Чтение дисциплины контингенту Copy 1_1",
+                "referencedSchema": "Default",
+                "referencedTable": "Чтение дисциплины контингенту Copy 1",
                 "sourceCardinality": "NoneRelationship",
                 "targetCardinality": "NoneRelationship",
                 "oldName": ""
@@ -1077,16 +1214,16 @@
         {
           "type": "table",
           "schemaName": "Default",
-          "tableName": "Набор студентов по году набора",
+          "tableName": "Контингент 2.0",
           "x": 1320,
           "y": 2550,
           "width": 200,
           "height": 100,
           "isBold": false,
           "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
+            "r": 131,
+            "g": 88,
+            "b": 61,
             "a": 1
           }
         },
@@ -1125,25 +1262,9 @@
         {
           "type": "table",
           "schemaName": "Default",
-          "tableName": "Факультет-специальность",
+          "tableName": "Образовательная программа",
           "x": 1320,
           "y": 2240,
-          "width": 200,
-          "height": 100,
-          "isBold": false,
-          "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
-            "a": 1
-          }
-        },
-        {
-          "type": "table",
-          "schemaName": "Default",
-          "tableName": "Контингент",
-          "x": 980,
-          "y": 2550,
           "width": 200,
           "height": 100,
           "isBold": false,
@@ -1180,9 +1301,9 @@
           "height": 100,
           "isBold": false,
           "titleColor": {
-            "r": 190,
-            "g": 220,
-            "b": 255,
+            "r": 255,
+            "g": 157,
+            "b": 157,
             "a": 1
           }
         },
@@ -1319,7 +1440,7 @@
           "schemaName": "Default",
           "tableName": "Чтение дисциплины контингенту",
           "x": 2040,
-          "y": 3190,
+          "y": 3200,
           "width": 200,
           "height": 100,
           "isBold": false,
@@ -1365,9 +1486,105 @@
         {
           "type": "table",
           "schemaName": "Default",
-          "tableName": "Нагрузка дисциплины",
+          "tableName": "Нагрузка чтения общая и преподавателя контингенту дисциплины",
           "x": 2300,
-          "y": 3190,
+          "y": 3200,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Уровни подготовки",
+          "x": 1800,
+          "y": 2250,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Нормативы",
+          "x": 3050,
+          "y": 2400,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Квази дисциплина",
+          "x": 1460,
+          "y": 3380,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 190,
+            "g": 220,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Семестровая квазидисциплина",
+          "x": 1730,
+          "y": 3380,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 190,
+            "g": 220,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Чтение дисциплины контингенту Copy 1",
+          "x": 2040,
+          "y": 3520,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Нагрузка чтения общая и преподавателя контингенту дисциплины Copy 1",
+          "x": 2300,
+          "y": 3520,
           "width": 200,
           "height": 100,
           "isBold": false,
@@ -1421,7 +1638,7 @@
         },
         {
           "name": "fk_Поток студентов_Учебный план_1",
-          "sourceTableName": "Набор студентов по году набора",
+          "sourceTableName": "Контингент 2.0",
           "sourceSchemaName": "Default",
           "lineWidth": 1,
           "visible": true,
@@ -1505,18 +1722,18 @@
         },
         {
           "name": "fk_Факультет-специальность_Лицензия_1",
-          "sourceTableName": "Факультет-специальность",
+          "sourceTableName": "Образовательная программа",
           "sourceSchemaName": "Default",
           "lineWidth": 1,
           "visible": true,
           "vertices": [
             {
               "x": 1535,
-              "y": 2290
+              "y": 2270
             },
             {
               "x": 1720,
-              "y": 2290
+              "y": 2270
             },
             {
               "x": 1720,
@@ -1525,7 +1742,7 @@
           ],
           "label": {
             "x": 1525,
-            "y": 2242,
+            "y": 2222,
             "width": 282,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -1542,42 +1759,8 @@
           }
         },
         {
-          "name": "fk_Набор студентов по году набора_Контингент_1",
-          "sourceTableName": "Набор студентов по году набора",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1305,
-              "y": 2600
-            },
-            {
-              "x": 1195,
-              "y": 2600
-            }
-          ],
-          "label": {
-            "x": 979,
-            "y": 2552,
-            "width": 336,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
           "name": "fk_Набор студентов по году набора_Рабочий план_1",
-          "sourceTableName": "Набор студентов по году набора",
+          "sourceTableName": "Контингент 2.0",
           "sourceSchemaName": "Default",
           "lineWidth": 1,
           "visible": true,
@@ -1694,60 +1877,18 @@
           }
         },
         {
-          "name": "fk_Факультет-специальность_Набор студентов по году набора_1",
-          "sourceTableName": "Факультет-специальность",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1420,
-              "y": 2355
-            },
-            {
-              "x": 1420,
-              "y": 2450
-            },
-            {
-              "x": 1420,
-              "y": 2450
-            },
-            {
-              "x": 1420,
-              "y": 2535
-            }
-          ],
-          "label": {
-            "x": 1428,
-            "y": 2345,
-            "width": 433,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
           "name": "fk_Факультет-специальность_Учебный план_1",
-          "sourceTableName": "Факультет-специальность",
+          "sourceTableName": "Образовательная программа",
           "sourceSchemaName": "Default",
           "lineWidth": 1,
           "visible": true,
           "vertices": [
             {
-              "x": 1450,
+              "x": 1430,
               "y": 2355
             },
             {
-              "x": 1450,
+              "x": 1430,
               "y": 2440
             },
             {
@@ -1760,7 +1901,7 @@
             }
           ],
           "label": {
-            "x": 1452,
+            "x": 1432,
             "y": 2295,
             "width": 312,
             "height": 40,
@@ -2228,48 +2369,6 @@
           }
         },
         {
-          "name": "fk_Контингент_Годовой объём по дисциплине_1",
-          "sourceTableName": "Контингент",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1195,
-              "y": 2630
-            },
-            {
-              "x": 1230,
-              "y": 2630
-            },
-            {
-              "x": 1230,
-              "y": 3240
-            },
-            {
-              "x": 2025,
-              "y": 3240
-            }
-          ],
-          "label": {
-            "x": 1185,
-            "y": 2582,
-            "width": 326,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
           "name": "fk_Должность_Преподаватель_1",
           "sourceTableName": "Должность",
           "sourceSchemaName": "Default",
@@ -2518,52 +2617,6 @@
           }
         },
         {
-          "name": "fk_Контингент_Контингент_1",
-          "sourceTableName": "Контингент",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 965,
-              "y": 2590
-            },
-            {
-              "x": 940,
-              "y": 2590
-            },
-            {
-              "x": 940,
-              "y": 2510
-            },
-            {
-              "x": 1020,
-              "y": 2510
-            },
-            {
-              "x": 1020,
-              "y": 2535
-            }
-          ],
-          "label": {
-            "x": 975,
-            "y": 2542,
-            "width": 194,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
           "name": "fk_Семестровая рабочая дисциплина_Контингент дисциплиы_1",
           "sourceTableName": "Семестровая рабочая дисциплина",
           "sourceSchemaName": "Default",
@@ -2584,7 +2637,7 @@
             },
             {
               "x": 2140,
-              "y": 3175
+              "y": 3185
             }
           ],
           "label": {
@@ -2614,67 +2667,25 @@
           "vertices": [
             {
               "x": 2255,
-              "y": 3240
+              "y": 3250
             },
             {
               "x": 2280,
-              "y": 3240
+              "y": 3250
             },
             {
               "x": 2280,
-              "y": 3240
+              "y": 3250
             },
             {
               "x": 2285,
-              "y": 3240
+              "y": 3250
             }
           ],
           "label": {
             "x": 2245,
-            "y": 3192,
+            "y": 3202,
             "width": 341,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Виды работ дисциплины_Нагрузка дисциплины_1",
-          "sourceTableName": "Виды работ дисциплины",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 2755,
-              "y": 2620
-            },
-            {
-              "x": 2550,
-              "y": 2620
-            },
-            {
-              "x": 2550,
-              "y": 3250
-            },
-            {
-              "x": 2515,
-              "y": 3250
-            }
-          ],
-          "label": {
-            "x": 2412,
-            "y": 2572,
-            "width": 353,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
@@ -2698,20 +2709,20 @@
           "vertices": [
             {
               "x": 915,
-              "y": 3270
+              "y": 3260
             },
             {
               "x": 1970,
-              "y": 3270
+              "y": 3260
             },
             {
               "x": 2025,
-              "y": 3270
+              "y": 3260
             }
           ],
           "label": {
             "x": 905,
-            "y": 3222,
+            "y": 3212,
             "width": 300,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -2755,6 +2766,444 @@
             "x": 1678,
             "y": 2572,
             "width": 357,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Уровни подготовки_Образовательная программа_1",
+          "sourceTableName": "Уровни подготовки",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1785,
+              "y": 2300
+            },
+            {
+              "x": 1645,
+              "y": 2300
+            },
+            {
+              "x": 1645,
+              "y": 2300
+            },
+            {
+              "x": 1535,
+              "y": 2300
+            }
+          ],
+          "label": {
+            "x": 1429,
+            "y": 2252,
+            "width": 366,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Вид работы_Нормативы_1",
+          "sourceTableName": "Вид работы",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2985,
+              "y": 2450
+            },
+            {
+              "x": 3010,
+              "y": 2450
+            },
+            {
+              "x": 3010,
+              "y": 2450
+            },
+            {
+              "x": 3035,
+              "y": 2450
+            }
+          ],
+          "label": {
+            "x": 2975,
+            "y": 2402,
+            "width": 200,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Нагрузка чтения общая и преподавателя контингенту дисциплины_Нагрузка вида работы семестровой рабочей дисциплины_1",
+          "sourceTableName": "Нагрузка чтения общая и преподавателя контингенту дисциплины",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2400,
+              "y": 3185
+            },
+            {
+              "x": 2400,
+              "y": 3120
+            },
+            {
+              "x": 2400,
+              "y": 3120
+            },
+            {
+              "x": 2400,
+              "y": 3065
+            }
+          ],
+          "label": {
+            "x": 2408,
+            "y": 3155,
+            "width": 865,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Дисциплина_Привязанная дисциплина Copy 1_1",
+          "sourceTableName": "Дисциплина",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2755,
+              "y": 2785
+            },
+            {
+              "x": 1560,
+              "y": 2870
+            },
+            {
+              "x": 1560,
+              "y": 3365
+            }
+          ],
+          "label": {
+            "x": 2418,
+            "y": 2737,
+            "width": 347,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Кафедра_Привязанная дисциплина Copy 1_1",
+          "sourceTableName": "Кафедра",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 925,
+              "y": 2635
+            },
+            {
+              "x": 1540,
+              "y": 2820
+            },
+            {
+              "x": 1540,
+              "y": 3365
+            }
+          ],
+          "label": {
+            "x": 915,
+            "y": 2587,
+            "width": 327,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Контингент 2.0_Привязанная дисциплина Copy 1_1",
+          "sourceTableName": "Контингент 2.0",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1535,
+              "y": 2610
+            },
+            {
+              "x": 1580,
+              "y": 2610
+            },
+            {
+              "x": 1580,
+              "y": 3365
+            }
+          ],
+          "label": {
+            "x": 1525,
+            "y": 2562,
+            "width": 364,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Квази дисциплина_Семестровая квазидисциплина_1",
+          "sourceTableName": "Квази дисциплина",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1675,
+              "y": 3430
+            },
+            {
+              "x": 1695,
+              "y": 3430
+            },
+            {
+              "x": 1695,
+              "y": 3430
+            },
+            {
+              "x": 1715,
+              "y": 3430
+            }
+          ],
+          "label": {
+            "x": 1665,
+            "y": 3382,
+            "width": 374,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Семестровая квазидисциплина_Чтение дисциплины контингенту Copy 1_1",
+          "sourceTableName": "Семестровая квазидисциплина",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1945,
+              "y": 3430
+            },
+            {
+              "x": 1985,
+              "y": 3430
+            },
+            {
+              "x": 1985,
+              "y": 3570
+            },
+            {
+              "x": 2025,
+              "y": 3570
+            }
+          ],
+          "label": {
+            "x": 1935,
+            "y": 3382,
+            "width": 518,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Преподаватель_Чтение дисциплины контингенту Copy 1_1",
+          "sourceTableName": "Преподаватель",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 915,
+              "y": 3270
+            },
+            {
+              "x": 2140,
+              "y": 3505
+            }
+          ],
+          "label": {
+            "x": 905,
+            "y": 3222,
+            "width": 414,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Чтение дисциплины контингенту Copy 1_Нагрузка чтения общая и преподавателя контингенту дисциплины Copy 1_1",
+          "sourceTableName": "Чтение дисциплины контингенту Copy 1",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2255,
+              "y": 3570
+            },
+            {
+              "x": 2270,
+              "y": 3570
+            },
+            {
+              "x": 2270,
+              "y": 3570
+            },
+            {
+              "x": 2285,
+              "y": 3570
+            }
+          ],
+          "label": {
+            "x": 2245,
+            "y": 3522,
+            "width": 800,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Виды работ дисциплины_Нагрузка чтения общая и преподавателя контингенту дисциплины Copy 1_1",
+          "sourceTableName": "Виды работ дисциплины",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2755,
+              "y": 2635
+            },
+            {
+              "x": 2680,
+              "y": 3540
+            },
+            {
+              "x": 2515,
+              "y": 3540
+            }
+          ],
+          "label": {
+            "x": 2067,
+            "y": 2587,
+            "width": 698,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
