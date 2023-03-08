@@ -259,7 +259,40 @@
                 "oldName": "faculty_id"
               }
             ],
-            "foreignKeys": [],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Department_Educators_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educators",
+                "referencedFields": [
+                  "department_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Department_Attached discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Attached discipline",
+                "referencedFields": [
+                  "department_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
             "indexes": [],
             "uniques": [],
             "primaryKey": {
@@ -370,6 +403,22 @@
                 "targetCardinality": "OneAndOnlyOneRelationship",
                 "comment": "",
                 "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational program_Studying plan_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educational plan",
+                "referencedFields": [
+                  "speciality_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
               }
             ],
             "indexes": [],
@@ -385,7 +434,7 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "License",
+            "name": "Enrollment",
             "comment": "",
             "oldName": "",
             "fields": [
@@ -403,30 +452,102 @@
               },
               {
                 "objectType": "TableField_LOGICAL",
-                "name": "speciality_id",
+                "name": "educational_plan_id",
                 "type": "INTEGER",
                 "length": 0,
                 "decimals": 0,
-                "isNullable": true,
+                "isNullable": false,
                 "defaultType": "None",
                 "defaultValue": "",
                 "comment": "",
-                "oldName": "speciality_id"
+                "oldName": "educational_plan_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "students_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "students_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "lectural_groups_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "lectural_groups_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "practicum_groups_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "practicum_groups_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "laboratory_groups_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "laboratory_groups_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "year",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "year"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "course",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "course"
               }
             ],
             "foreignKeys": [
               {
                 "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_License_Speciality_1",
+                "name": "fk_Enrollment_Workplan_1",
                 "fields": [
-                  "speciality_id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Speciality",
-                "referencedFields": [
                   "id"
                 ],
-                "sourceCardinality": "ManyRelationship",
+                "referencedSchema": "Default",
+                "referencedTable": "Workplan",
+                "referencedFields": [
+                  "enrollment_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "OneAndOnlyOneRelationship",
                 "comment": "",
                 "oldName": ""
@@ -445,7 +566,7 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "Studying plan",
+            "name": "Educational plan",
             "comment": "",
             "oldName": "",
             "fields": [
@@ -486,7 +607,56 @@
                 "oldName": "year"
               }
             ],
-            "foreignKeys": [],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Studying plan_Enrollment_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Enrollment",
+                "referencedFields": [
+                  "educational_plan_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational plan_Educational discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educational discipline",
+                "referencedFields": [
+                  "educational_plan_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational plan_Course Duration_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Course Duration",
+                "referencedFields": [
+                  "educational_plan_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
             "indexes": [],
             "uniques": [],
             "primaryKey": {
@@ -500,7 +670,7 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "Enrollment",
+            "name": "Educational discipline",
             "comment": "",
             "oldName": "",
             "fields": [
@@ -518,7 +688,7 @@
               },
               {
                 "objectType": "TableField_LOGICAL",
-                "name": "studying_plan_id",
+                "name": "discipline_id",
                 "type": "INTEGER",
                 "length": 0,
                 "decimals": 0,
@@ -526,11 +696,11 @@
                 "defaultType": "None",
                 "defaultValue": "",
                 "comment": "",
-                "oldName": "studying_plan_id"
+                "oldName": "discipline_id"
               },
               {
                 "objectType": "TableField_LOGICAL",
-                "name": "students_count",
+                "name": "educational_plan_id",
                 "type": "INTEGER",
                 "length": 0,
                 "decimals": 0,
@@ -538,11 +708,91 @@
                 "defaultType": "None",
                 "defaultValue": "",
                 "comment": "",
-                "oldName": "students_count"
+                "oldName": "educational_plan_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational discipline_Discipline per Semester_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Discipline per Semester",
+                "referencedFields": [
+                  "ed_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational discipline_ED EWTD_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "ED Workload",
+                "referencedFields": [
+                  "ed_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational discipline_Attached discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Attached discipline",
+                "referencedFields": [
+                  "ed_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Course Duration",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
               },
               {
                 "objectType": "TableField_LOGICAL",
-                "name": "lectural_groups_count",
+                "name": "educational_plan_id",
                 "type": "INTEGER",
                 "length": 0,
                 "decimals": 0,
@@ -550,7 +800,1308 @@
                 "defaultType": "None",
                 "defaultValue": "",
                 "comment": "",
-                "oldName": "lectural_groups_count"
+                "oldName": "educational_plan_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "course",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "course"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "semester",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "semester"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "weeks_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "weeks_count"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Course Duration_Discipline per Semester_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Discipline per Semester",
+                "referencedFields": [
+                  "course_duration_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Educational work type",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "name",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "name"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "calculate_ewt",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "calculate_ewt"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational work type_EWT - Discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "EWT - Discipline",
+                "referencedFields": [
+                  "ewt_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational work type_Normatives_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Normatives",
+                "referencedFields": [
+                  "ewt_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Discipline",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "name",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "name"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "educational",
+                "type": "BOOL",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "educational"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Discipline_Educational discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educational discipline",
+                "referencedFields": [
+                  "discipline_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Discipline_EWT - Discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "EWT - Discipline",
+                "referencedFields": [
+                  "discipline_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Discipline_Attached discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Attached discipline",
+                "referencedFields": [
+                  "discipline_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "EWT - Discipline",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ewt_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ewt_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "discipline_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "discipline_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "scope",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "Где будет использован вид работы(учебный план, рабочий план, нагрузка)",
+                "oldName": "scope"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_EWT - Discipline_ED EWTD_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "ED Workload",
+                "referencedFields": [
+                  "ewtd_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Normatives",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ewt_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ewt_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "name",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "name"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "value",
+                "type": "DECIMAL",
+                "length": 0,
+                "decimals": 2,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "value"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "year",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "year"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Discipline per Semester",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "course_duration_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "course_duration_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ed_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ed_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "duration_in_hours",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "duration_in_hours"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "License",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "educational_program_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "educational_program_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_License_Educational program_1",
+                "fields": [
+                  "educational_program_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educational program",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Workplan",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "enrollment_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "enrollment_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Workplan_Attached discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Attached discipline",
+                "referencedFields": [
+                  "workplan_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Educators",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "position_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "position_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "department_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "department_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "actual_workload",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "actual_workload"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educators_Educators' workload_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educators' workload",
+                "referencedFields": [
+                  "educator_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Position",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "name",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "name"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "workload",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "workload"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Position_Educators_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educators",
+                "referencedFields": [
+                  "position_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Attached discipline",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ed_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ed_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "discipline_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "discipline_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "workplan_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "workplan_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "department_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "department_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Attached discipline_AD per Semester_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "AD per Semester",
+                "referencedFields": [
+                  "ad_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "AD per Semester",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ad_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ad_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "semester",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "semester"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD per Semester_Educators' workload_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educators' workload",
+                "referencedFields": [
+                  "sad_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "ED Workload",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ed_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ed_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ewtd_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ewtd_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "hours",
+                "type": "DECIMAL",
+                "length": 0,
+                "decimals": 1,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "hours"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "AD Workload",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "sad_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "sad_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ewtd_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ewtd_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "hours",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "hours"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "calculated_workload",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "calculated_workload"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD Workload_AD per Semester_1",
+                "fields": [
+                  "sad_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "AD per Semester",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD Workload_EWT - Discipline_1",
+                "fields": [
+                  "ewtd_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "EWT - Discipline",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD Workload_Calculated workload_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Calculated workload",
+                "referencedFields": [
+                  "workload_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Educators' workload",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "educator_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "educator_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "sad_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "sad_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "student_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "student_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "lecture_group_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "lecture_group_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "practicum_group_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "practicum_group_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "laboratory_group_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "laboratory_group_count"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educators' workload_Calculated workload_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Calculated workload",
+                "referencedFields": [
+                  "educator_workload_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Calculated workload",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "educator_workload_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "educator_workload_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "workload_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "workload_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "calculated_workload",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "calculated_workload"
               }
             ],
             "foreignKeys": [],
@@ -587,8 +2138,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Field of knowledge",
-          "x": 230,
-          "y": 10,
+          "x": 1180,
+          "y": 750,
           "width": 200,
           "height": 150,
           "isBold": false,
@@ -603,8 +2154,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Speciality",
-          "x": 600,
-          "y": 250,
+          "x": 1550,
+          "y": 760,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -619,8 +2170,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Faculty",
-          "x": 220,
-          "y": 500,
+          "x": 1170,
+          "y": 1240,
           "width": 200,
           "height": 90,
           "isBold": false,
@@ -635,8 +2186,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Department",
-          "x": 220,
-          "y": 590,
+          "x": 890,
+          "y": 1650,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -651,8 +2202,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Educational program",
-          "x": 600,
-          "y": 500,
+          "x": 1550,
+          "y": 1240,
           "width": 200,
           "height": 160,
           "isBold": false,
@@ -667,8 +2218,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "License",
-          "x": 950,
-          "y": 250,
+          "x": 1850,
+          "y": 980,
           "width": 200,
           "height": 90,
           "isBold": false,
@@ -682,11 +2233,27 @@
         {
           "type": "table",
           "schemaName": "Default",
-          "tableName": "Studying plan",
-          "x": 600,
-          "y": 900,
+          "tableName": "Educational plan",
+          "x": 1550,
+          "y": 1640,
           "width": 200,
-          "height": 200,
+          "height": 110,
+          "isBold": false,
+          "titleColor": {
+            "r": 255,
+            "g": 200,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Enrollment",
+          "x": 1250,
+          "y": 1640,
+          "width": 200,
+          "height": 210,
           "isBold": false,
           "titleColor": {
             "r": 55,
@@ -698,16 +2265,256 @@
         {
           "type": "table",
           "schemaName": "Default",
-          "tableName": "Enrollment",
-          "x": 300,
-          "y": 900,
+          "tableName": "Educational discipline",
+          "x": 1850,
+          "y": 1640,
           "width": 200,
-          "height": 200,
+          "height": 110,
+          "isBold": false,
+          "titleColor": {
+            "r": 255,
+            "g": 200,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Course Duration",
+          "x": 1550,
+          "y": 1790,
+          "width": 200,
+          "height": 160,
+          "isBold": false,
+          "titleColor": {
+            "r": 255,
+            "g": 200,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Discipline per Semester",
+          "x": 1850,
+          "y": 1790,
+          "width": 200,
+          "height": 140,
+          "isBold": false,
+          "titleColor": {
+            "r": 255,
+            "g": 200,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Discipline",
+          "x": 2350,
+          "y": 1820,
+          "width": 200,
+          "height": 110,
+          "isBold": false,
+          "titleColor": {
+            "r": 200,
+            "g": 255,
+            "b": 160,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Educational work type",
+          "x": 2350,
+          "y": 1440,
+          "width": 200,
+          "height": 140,
+          "isBold": false,
+          "titleColor": {
+            "r": 200,
+            "g": 255,
+            "b": 160,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "EWT - Discipline",
+          "x": 2350,
+          "y": 1620,
+          "width": 200,
+          "height": 150,
+          "isBold": false,
+          "titleColor": {
+            "r": 200,
+            "g": 255,
+            "b": 160,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Normatives",
+          "x": 2700,
+          "y": 1430,
+          "width": 200,
+          "height": 160,
+          "isBold": false,
+          "titleColor": {
+            "r": 200,
+            "g": 255,
+            "b": 160,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "ED Workload",
+          "x": 1850,
+          "y": 1440,
+          "width": 200,
+          "height": 140,
+          "isBold": false,
+          "titleColor": {
+            "r": 255,
+            "g": 200,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Workplan",
+          "x": 1250,
+          "y": 2040,
+          "width": 200,
+          "height": 90,
+          "isBold": false,
+          "titleColor": {
+            "r": 128,
+            "g": 64,
+            "b": 64,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Position",
+          "x": 600,
+          "y": 2000,
+          "width": 200,
+          "height": 110,
           "isBold": false,
           "titleColor": {
             "r": 55,
             "g": 131,
             "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Educators",
+          "x": 900,
+          "y": 1980,
+          "width": 200,
+          "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Attached discipline",
+          "x": 1550,
+          "y": 2050,
+          "width": 200,
+          "height": 170,
+          "isBold": false,
+          "titleColor": {
+            "r": 190,
+            "g": 220,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "AD per Semester",
+          "x": 1850,
+          "y": 2150,
+          "width": 200,
+          "height": 120,
+          "isBold": false,
+          "titleColor": {
+            "r": 190,
+            "g": 220,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "AD Workload",
+          "x": 2110,
+          "y": 2150,
+          "width": 200,
+          "height": 150,
+          "isBold": false,
+          "titleColor": {
+            "r": 190,
+            "g": 220,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Educators' workload",
+          "x": 1850,
+          "y": 2360,
+          "width": 200,
+          "height": 190,
+          "isBold": false,
+          "titleColor": {
+            "r": 190,
+            "g": 220,
+            "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Calculated workload",
+          "x": 2110,
+          "y": 2360,
+          "width": 200,
+          "height": 150,
+          "isBold": false,
+          "titleColor": {
+            "r": 190,
+            "g": 220,
+            "b": 255,
             "a": 1
           }
         }
@@ -722,25 +2529,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 585,
-              "y": 350
+              "x": 1535,
+              "y": 860
             },
             {
-              "x": 535,
-              "y": 350
+              "x": 1490,
+              "y": 860
             },
             {
-              "x": 535,
-              "y": 50
+              "x": 1490,
+              "y": 790
             },
             {
-              "x": 445,
-              "y": 50
+              "x": 1395,
+              "y": 790
             }
           ],
           "label": {
-            "x": 368,
-            "y": 302,
+            "x": 1318,
+            "y": 812,
             "width": 227,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -764,25 +2571,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 205,
-              "y": 550
+              "x": 1155,
+              "y": 1290
             },
             {
-              "x": 200,
-              "y": 550
+              "x": 1150,
+              "y": 1290
             },
             {
-              "x": 200,
-              "y": 670
+              "x": 1150,
+              "y": 1730
             },
             {
-              "x": 205,
-              "y": 670
+              "x": 1105,
+              "y": 1730
             }
           ],
           "label": {
-            "x": 221,
-            "y": 552,
+            "x": 1171,
+            "y": 1292,
             "width": 168,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -806,25 +2613,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 585,
-              "y": 570
+              "x": 1535,
+              "y": 1310
             },
             {
-              "x": 555,
-              "y": 570
+              "x": 1510,
+              "y": 1310
             },
             {
-              "x": 555,
-              "y": 290
+              "x": 1510,
+              "y": 800
             },
             {
-              "x": 585,
-              "y": 290
+              "x": 1535,
+              "y": 800
             }
           ],
           "label": {
-            "x": 601,
-            "y": 532,
+            "x": 1551,
+            "y": 1272,
             "width": 239,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -848,25 +2655,25 @@
           "visible": true,
           "vertices": [
             {
-              "x": 585,
-              "y": 580
+              "x": 1535,
+              "y": 1320
             },
             {
-              "x": 505,
-              "y": 580
+              "x": 1460,
+              "y": 1320
             },
             {
-              "x": 505,
-              "y": 550
+              "x": 1460,
+              "y": 1290
             },
             {
-              "x": 435,
-              "y": 550
+              "x": 1385,
+              "y": 1290
             }
           ],
           "label": {
-            "x": 370,
-            "y": 532,
+            "x": 1320,
+            "y": 1272,
             "width": 225,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -883,33 +2690,1117 @@
           }
         },
         {
-          "name": "fk_License_Speciality_1",
+          "name": "fk_Educational program_Studying plan_1",
+          "sourceTableName": "Educational program",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1535,
+              "y": 1280
+            },
+            {
+              "x": 1535,
+              "y": 1700
+            }
+          ],
+          "label": {
+            "x": 1551,
+            "y": 1282,
+            "width": 265,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Studying plan_Enrollment_1",
+          "sourceTableName": "Educational plan",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1535,
+              "y": 1690
+            },
+            {
+              "x": 1500,
+              "y": 1690
+            },
+            {
+              "x": 1500,
+              "y": 1710
+            },
+            {
+              "x": 1465,
+              "y": 1710
+            }
+          ],
+          "label": {
+            "x": 1344,
+            "y": 1642,
+            "width": 201,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Educational plan_Educational discipline_1",
+          "sourceTableName": "Educational plan",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1765,
+              "y": 1680
+            },
+            {
+              "x": 1800,
+              "y": 1680
+            },
+            {
+              "x": 1800,
+              "y": 1720
+            },
+            {
+              "x": 1835,
+              "y": 1720
+            }
+          ],
+          "label": {
+            "x": 1755,
+            "y": 1632,
+            "width": 289,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Discipline_Educational discipline_1",
+          "sourceTableName": "Discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2335,
+              "y": 1850
+            },
+            {
+              "x": 2210,
+              "y": 1850
+            },
+            {
+              "x": 2210,
+              "y": 1700
+            },
+            {
+              "x": 2065,
+              "y": 1700
+            }
+          ],
+          "label": {
+            "x": 2101,
+            "y": 1802,
+            "width": 244,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Educational discipline_Discipline per Semester_1",
+          "sourceTableName": "Educational discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2065,
+              "y": 1690
+            },
+            {
+              "x": 2070,
+              "y": 1690
+            },
+            {
+              "x": 2070,
+              "y": 1870
+            },
+            {
+              "x": 2065,
+              "y": 1870
+            }
+          ],
+          "label": {
+            "x": 2061,
+            "y": 1692,
+            "width": 333,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Educational plan_Course Duration_1",
+          "sourceTableName": "Educational plan",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1765,
+              "y": 1690
+            },
+            {
+              "x": 1770,
+              "y": 1690
+            },
+            {
+              "x": 1770,
+              "y": 1850
+            },
+            {
+              "x": 1765,
+              "y": 1850
+            }
+          ],
+          "label": {
+            "x": 1761,
+            "y": 1692,
+            "width": 257,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Course Duration_Discipline per Semester_1",
+          "sourceTableName": "Course Duration",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1765,
+              "y": 1840
+            },
+            {
+              "x": 1800,
+              "y": 1840
+            },
+            {
+              "x": 1800,
+              "y": 1860
+            },
+            {
+              "x": 1835,
+              "y": 1860
+            }
+          ],
+          "label": {
+            "x": 1755,
+            "y": 1792,
+            "width": 301,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Educational discipline_ED EWTD_1",
+          "sourceTableName": "Educational discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1835,
+              "y": 1680
+            },
+            {
+              "x": 1820,
+              "y": 1680
+            },
+            {
+              "x": 1820,
+              "y": 1500
+            },
+            {
+              "x": 1835,
+              "y": 1500
+            }
+          ],
+          "label": {
+            "x": 1851,
+            "y": 1642,
+            "width": 248,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_EWT - Discipline_ED EWTD_1",
+          "sourceTableName": "EWT - Discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2335,
+              "y": 1660
+            },
+            {
+              "x": 2210,
+              "y": 1660
+            },
+            {
+              "x": 2210,
+              "y": 1520
+            },
+            {
+              "x": 2065,
+              "y": 1520
+            }
+          ],
+          "label": {
+            "x": 2129,
+            "y": 1612,
+            "width": 216,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Discipline_EWT - Discipline_1",
+          "sourceTableName": "Discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2565,
+              "y": 1860
+            },
+            {
+              "x": 2570,
+              "y": 1860
+            },
+            {
+              "x": 2570,
+              "y": 1710
+            },
+            {
+              "x": 2565,
+              "y": 1710
+            }
+          ],
+          "label": {
+            "x": 2561,
+            "y": 1822,
+            "width": 212,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Educational work type_EWT - Discipline_1",
+          "sourceTableName": "Educational work type",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2565,
+              "y": 1480
+            },
+            {
+              "x": 2570,
+              "y": 1480
+            },
+            {
+              "x": 2570,
+              "y": 1680
+            },
+            {
+              "x": 2565,
+              "y": 1680
+            }
+          ],
+          "label": {
+            "x": 2561,
+            "y": 1482,
+            "width": 291,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Educational work type_Normatives_1",
+          "sourceTableName": "Educational work type",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2565,
+              "y": 1490
+            },
+            {
+              "x": 2630,
+              "y": 1490
+            },
+            {
+              "x": 2630,
+              "y": 1490
+            },
+            {
+              "x": 2685,
+              "y": 1490
+            }
+          ],
+          "label": {
+            "x": 2555,
+            "y": 1442,
+            "width": 258,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_License_Educational program_1",
           "sourceTableName": "License",
           "sourceSchemaName": "Default",
           "lineWidth": 1,
           "visible": true,
           "vertices": [
             {
-              "x": 935,
-              "y": 320
+              "x": 1835,
+              "y": 1030
             },
             {
-              "x": 895,
-              "y": 320
+              "x": 1840,
+              "y": 1030
             },
             {
-              "x": 895,
-              "y": 290
+              "x": 1840,
+              "y": 1290
             },
             {
-              "x": 815,
-              "y": 290
+              "x": 1765,
+              "y": 1290
             }
           ],
           "label": {
-            "x": 788,
-            "y": 272,
-            "width": 157,
+            "x": 1617,
+            "y": 982,
+            "width": 228,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Enrollment_Workplan_1",
+          "sourceTableName": "Enrollment",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1350,
+              "y": 1865
+            },
+            {
+              "x": 1350,
+              "y": 1950
+            },
+            {
+              "x": 1350,
+              "y": 1950
+            },
+            {
+              "x": 1350,
+              "y": 2025
+            }
+          ],
+          "label": {
+            "x": 1358,
+            "y": 1855,
+            "width": 175,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Position_Educators_1",
+          "sourceTableName": "Position",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 815,
+              "y": 2040
+            },
+            {
+              "x": 845,
+              "y": 2040
+            },
+            {
+              "x": 845,
+              "y": 2040
+            },
+            {
+              "x": 885,
+              "y": 2040
+            }
+          ],
+          "label": {
+            "x": 805,
+            "y": 1992,
+            "width": 162,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Department_Educators_1",
+          "sourceTableName": "Department",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 875,
+              "y": 1690
+            },
+            {
+              "x": 840,
+              "y": 1690
+            },
+            {
+              "x": 840,
+              "y": 2060
+            },
+            {
+              "x": 885,
+              "y": 2060
+            }
+          ],
+          "label": {
+            "x": 891,
+            "y": 1692,
+            "width": 186,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Department_Attached discipline_1",
+          "sourceTableName": "Department",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1105,
+              "y": 1700
+            },
+            {
+              "x": 1140,
+              "y": 1700
+            },
+            {
+              "x": 1140,
+              "y": 2170
+            },
+            {
+              "x": 1535,
+              "y": 2170
+            }
+          ],
+          "label": {
+            "x": 1095,
+            "y": 1652,
+            "width": 240,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Workplan_Attached discipline_1",
+          "sourceTableName": "Workplan",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1465,
+              "y": 2090
+            },
+            {
+              "x": 1500,
+              "y": 2090
+            },
+            {
+              "x": 1500,
+              "y": 2160
+            },
+            {
+              "x": 1535,
+              "y": 2160
+            }
+          ],
+          "label": {
+            "x": 1455,
+            "y": 2042,
+            "width": 226,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Educational discipline_Attached discipline_1",
+          "sourceTableName": "Educational discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1835,
+              "y": 1680
+            },
+            {
+              "x": 1810,
+              "y": 1680
+            },
+            {
+              "x": 1810,
+              "y": 2110
+            },
+            {
+              "x": 1765,
+              "y": 2110
+            }
+          ],
+          "label": {
+            "x": 1543,
+            "y": 1632,
+            "width": 302,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Discipline_Attached discipline_1",
+          "sourceTableName": "Discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2335,
+              "y": 1870
+            },
+            {
+              "x": 2210,
+              "y": 1870
+            },
+            {
+              "x": 2210,
+              "y": 2130
+            },
+            {
+              "x": 1765,
+              "y": 2130
+            }
+          ],
+          "label": {
+            "x": 2119,
+            "y": 1822,
+            "width": 226,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Attached discipline_AD per Semester_1",
+          "sourceTableName": "Attached discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1765,
+              "y": 2080
+            },
+            {
+              "x": 1790,
+              "y": 2080
+            },
+            {
+              "x": 1790,
+              "y": 2210
+            },
+            {
+              "x": 1835,
+              "y": 2210
+            }
+          ],
+          "label": {
+            "x": 1755,
+            "y": 2032,
+            "width": 274,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_AD Workload_AD per Semester_1",
+          "sourceTableName": "AD Workload",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2095,
+              "y": 2210
+            },
+            {
+              "x": 2080,
+              "y": 2210
+            },
+            {
+              "x": 2080,
+              "y": 2190
+            },
+            {
+              "x": 2065,
+              "y": 2190
+            }
+          ],
+          "label": {
+            "x": 1866,
+            "y": 2162,
+            "width": 239,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_AD Workload_EWT - Discipline_1",
+          "sourceTableName": "AD Workload",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2325,
+              "y": 2230
+            },
+            {
+              "x": 2330,
+              "y": 2230
+            },
+            {
+              "x": 2330,
+              "y": 1670
+            },
+            {
+              "x": 2335,
+              "y": 1670
+            }
+          ],
+          "label": {
+            "x": 2315,
+            "y": 2182,
+            "width": 235,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_AD per Semester_Educators' workload_1",
+          "sourceTableName": "AD per Semester",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1835,
+              "y": 2190
+            },
+            {
+              "x": 1805,
+              "y": 2190
+            },
+            {
+              "x": 1805,
+              "y": 2440
+            },
+            {
+              "x": 1835,
+              "y": 2440
+            }
+          ],
+          "label": {
+            "x": 1851,
+            "y": 2192,
+            "width": 284,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Educators_Educators' workload_1",
+          "sourceTableName": "Educators",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1115,
+              "y": 2030
+            },
+            {
+              "x": 1180,
+              "y": 2030
+            },
+            {
+              "x": 1180,
+              "y": 2420
+            },
+            {
+              "x": 1835,
+              "y": 2420
+            }
+          ],
+          "label": {
+            "x": 1105,
+            "y": 1982,
+            "width": 240,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_AD Workload_Calculated workload_1",
+          "sourceTableName": "AD Workload",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2325,
+              "y": 2200
+            },
+            {
+              "x": 2380,
+              "y": 2200
+            },
+            {
+              "x": 2380,
+              "y": 2440
+            },
+            {
+              "x": 2325,
+              "y": 2440
+            }
+          ],
+          "label": {
+            "x": 2321,
+            "y": 2202,
+            "width": 259,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Educators' workload_Calculated workload_1",
+          "sourceTableName": "Educators' workload",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2065,
+              "y": 2400
+            },
+            {
+              "x": 2080,
+              "y": 2400
+            },
+            {
+              "x": 2080,
+              "y": 2420
+            },
+            {
+              "x": 2095,
+              "y": 2420
+            }
+          ],
+          "label": {
+            "x": 2055,
+            "y": 2352,
+            "width": 304,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
