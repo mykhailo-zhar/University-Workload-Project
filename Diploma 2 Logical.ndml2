@@ -19,145 +19,6 @@
         "tables": [
           {
             "objectType": "Table_LOGICAL",
-            "name": "Field of knowledge",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INT",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "cipher",
-                "type": "INT",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "cipher"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "name",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "name"
-              }
-            ],
-            "foreignKeys": [],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "Speciality",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INT",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "cipher",
-                "type": "INT",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "cipher"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "name",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "name"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "speciality_of",
-                "type": "INT",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "speciality_of"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Speciality_Field of knowledge_1",
-                "fields": [
-                  "speciality_of"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Field of knowledge",
-                "referencedFields": [
-                  "id"
-                ],
-                "sourceCardinality": "ManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
             "name": "Faculty",
             "comment": "",
             "oldName": "",
@@ -306,266 +167,6 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "Educational program",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "speciality_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "speciality_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "faculty_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "faculty_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "educational_level",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "educational_level"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "ciphre?",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "Есть ли шифр?",
-                "oldName": "ciphre?"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Educational program_Speciality_1",
-                "fields": [
-                  "speciality_id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Speciality",
-                "referencedFields": [
-                  "id"
-                ],
-                "sourceCardinality": "ManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Educational program_Faculty_1",
-                "fields": [
-                  "faculty_id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Faculty",
-                "referencedFields": [
-                  "id"
-                ],
-                "sourceCardinality": "ManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Educational program_Studying plan_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Educational plan",
-                "referencedFields": [
-                  "speciality_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "Enrollment",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "educational_plan_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "educational_plan_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "students_count",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "students_count"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "lectural_groups_count",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "lectural_groups_count"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "practicum_groups_count",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "practicum_groups_count"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "laboratory_groups_count",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "laboratory_groups_count"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "year",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "year"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "course",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "course"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Enrollment_Workplan_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Workplan",
-                "referencedFields": [
-                  "enrollment_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
             "name": "Educational plan",
             "comment": "",
             "oldName": "",
@@ -615,7 +216,7 @@
                   "id"
                 ],
                 "referencedSchema": "Default",
-                "referencedTable": "Enrollment",
+                "referencedTable": "9月の１日のEnrollment",
                 "referencedFields": [
                   "educational_plan_id"
                 ],
@@ -1803,134 +1404,6 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "AD Workload",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "sad_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "sad_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "ewtd_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "ewtd_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "hours",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "hours"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "calculated_workload",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "calculated_workload"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_AD Workload_AD per Semester_1",
-                "fields": [
-                  "sad_id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "AD per Semester",
-                "referencedFields": [
-                  "id"
-                ],
-                "sourceCardinality": "ManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_AD Workload_EWT - Discipline_1",
-                "fields": [
-                  "ewtd_id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "EWT - Discipline",
-                "referencedFields": [
-                  "id"
-                ],
-                "sourceCardinality": "ManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_AD Workload_Calculated workload_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Calculated workload",
-                "referencedFields": [
-                  "workload_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
             "name": "Educators' workload",
             "comment": "",
             "oldName": "",
@@ -2100,11 +1573,514 @@
                 "isNullable": false,
                 "defaultType": "None",
                 "defaultValue": "",
-                "comment": "",
+                "comment": "Денормализованное поле",
                 "oldName": "calculated_workload"
               }
             ],
             "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "AD Workload",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "sad_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "sad_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ewtd_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ewtd_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "hours",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "hours"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "calculated_workload",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "Денормализованное поле",
+                "oldName": "calculated_workload"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD Workload_AD per Semester_1",
+                "fields": [
+                  "sad_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "AD per Semester",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD Workload_EWT - Discipline_1",
+                "fields": [
+                  "ewtd_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "EWT - Discipline",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD Workload_Calculated workload_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Calculated workload",
+                "referencedFields": [
+                  "workload_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Speciality",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "code",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "code"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "name",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "name"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "speciality_of",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "speciality_of"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Speciality_Field of knowledge_1",
+                "fields": [
+                  "speciality_of"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Field of knowledge",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Field of knowledge",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "code",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "code"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "name",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "name"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "code"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Educational program",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "speciality_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "speciality_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "faculty_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "faculty_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "educational_level",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "educational_level"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational program_Speciality_1",
+                "fields": [
+                  "speciality_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Speciality",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational program_Faculty_1",
+                "fields": [
+                  "faculty_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Faculty",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational program_Studying plan_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educational plan",
+                "referencedFields": [
+                  "speciality_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "9月の１日のEnrollment",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "educational_plan_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "educational_plan_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "students_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "students_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "lectural_groups_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "lectural_groups_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "practicum_groups_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "practicum_groups_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "laboratory_groups_count",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "laboratory_groups_count"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "year",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "year"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "course",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "course"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Enrollment_Workplan_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Workplan",
+                "referencedFields": [
+                  "enrollment_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
             "indexes": [],
             "uniques": [],
             "primaryKey": {
@@ -2138,10 +2114,10 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Field of knowledge",
-          "x": 1180,
-          "y": 750,
+          "x": 1260,
+          "y": 1010,
           "width": 200,
-          "height": 150,
+          "height": 110,
           "isBold": false,
           "titleColor": {
             "r": 55,
@@ -2155,7 +2131,7 @@
           "schemaName": "Default",
           "tableName": "Speciality",
           "x": 1550,
-          "y": 760,
+          "y": 1010,
           "width": 200,
           "height": 200,
           "isBold": false,
@@ -2173,7 +2149,7 @@
           "x": 1170,
           "y": 1240,
           "width": 200,
-          "height": 90,
+          "height": 140,
           "isBold": false,
           "titleColor": {
             "r": 55,
@@ -2218,8 +2194,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "License",
-          "x": 1850,
-          "y": 980,
+          "x": 2450,
+          "y": 1240,
           "width": 200,
           "height": 90,
           "isBold": false,
@@ -2249,7 +2225,7 @@
         {
           "type": "table",
           "schemaName": "Default",
-          "tableName": "Enrollment",
+          "tableName": "9月の１日のEnrollment",
           "x": 1250,
           "y": 1640,
           "width": 200,
@@ -2362,8 +2338,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Normatives",
-          "x": 2700,
-          "y": 1430,
+          "x": 2660,
+          "y": 1620,
           "width": 200,
           "height": 160,
           "isBold": false,
@@ -2503,20 +2479,44 @@
           }
         },
         {
-          "type": "table",
-          "schemaName": "Default",
-          "tableName": "Calculated workload",
-          "x": 2110,
-          "y": 2360,
-          "width": 200,
-          "height": 150,
-          "isBold": false,
-          "titleColor": {
-            "r": 190,
-            "g": 220,
-            "b": 255,
+          "type": "note",
+          "name": "Note 1",
+          "x": 570,
+          "y": 1600,
+          "width": 160,
+          "height": 50,
+          "text": "Metadata/Options?\r\n",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
             "a": 1
-          }
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "note",
+          "name": "Note 2",
+          "x": 890,
+          "y": 1950,
+          "width": 140,
+          "height": 60,
+          "text": "N-арная связь с персон\r\n",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
         }
       ],
       "layers": [],
@@ -2530,24 +2530,24 @@
           "vertices": [
             {
               "x": 1535,
-              "y": 860
+              "y": 1110
             },
             {
               "x": 1490,
-              "y": 860
+              "y": 1110
             },
             {
               "x": 1490,
-              "y": 790
+              "y": 1050
             },
             {
-              "x": 1395,
-              "y": 790
+              "x": 1475,
+              "y": 1050
             }
           ],
           "label": {
             "x": 1318,
-            "y": 812,
+            "y": 1062,
             "width": 227,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -2622,11 +2622,11 @@
             },
             {
               "x": 1510,
-              "y": 800
+              "y": 1050
             },
             {
               "x": 1535,
-              "y": 800
+              "y": 1050
             }
           ],
           "label": {
@@ -3160,11 +3160,11 @@
             },
             {
               "x": 2630,
-              "y": 1490
+              "y": 1680
             },
             {
-              "x": 2685,
-              "y": 1490
+              "x": 2645,
+              "y": 1680
             }
           ],
           "label": {
@@ -3193,12 +3193,12 @@
           "visible": true,
           "vertices": [
             {
-              "x": 1835,
-              "y": 1030
+              "x": 2435,
+              "y": 1290
             },
             {
               "x": 1840,
-              "y": 1030
+              "y": 1290
             },
             {
               "x": 1840,
@@ -3210,8 +3210,8 @@
             }
           ],
           "label": {
-            "x": 1617,
-            "y": 982,
+            "x": 2217,
+            "y": 1242,
             "width": 228,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -3229,7 +3229,7 @@
         },
         {
           "name": "fk_Enrollment_Workplan_1",
-          "sourceTableName": "Enrollment",
+          "sourceTableName": "9月の１日のEnrollment",
           "sourceSchemaName": "Default",
           "lineWidth": 1,
           "visible": true,
@@ -3446,14 +3446,14 @@
           "vertices": [
             {
               "x": 1835,
-              "y": 1680
+              "y": 1690
             },
             {
-              "x": 1810,
-              "y": 1680
+              "x": 1820,
+              "y": 1690
             },
             {
-              "x": 1810,
+              "x": 1820,
               "y": 2110
             },
             {
@@ -3463,7 +3463,7 @@
           ],
           "label": {
             "x": 1543,
-            "y": 1632,
+            "y": 1642,
             "width": 302,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -3717,90 +3717,6 @@
             "x": 1105,
             "y": 1982,
             "width": 240,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_AD Workload_Calculated workload_1",
-          "sourceTableName": "AD Workload",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 2325,
-              "y": 2200
-            },
-            {
-              "x": 2380,
-              "y": 2200
-            },
-            {
-              "x": 2380,
-              "y": 2440
-            },
-            {
-              "x": 2325,
-              "y": 2440
-            }
-          ],
-          "label": {
-            "x": 2321,
-            "y": 2202,
-            "width": 259,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Educators' workload_Calculated workload_1",
-          "sourceTableName": "Educators' workload",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 2065,
-              "y": 2400
-            },
-            {
-              "x": 2080,
-              "y": 2400
-            },
-            {
-              "x": 2080,
-              "y": 2420
-            },
-            {
-              "x": 2095,
-              "y": 2420
-            }
-          ],
-          "label": {
-            "x": 2055,
-            "y": 2352,
-            "width": 304,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
