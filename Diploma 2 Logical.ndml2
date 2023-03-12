@@ -1470,106 +1470,6 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "Speciality",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INT",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "code",
-                "type": "INT",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "code"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "name",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "name"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "speciality_of",
-                "type": "INT",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "speciality_of"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Speciality_Field of knowledge_1",
-                "fields": [
-                  "speciality_of"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Field of knowledge",
-                "referencedFields": [
-                  "id"
-                ],
-                "sourceCardinality": "ManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Speciality_ISp Speciality_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "ISp Speciality",
-                "referencedFields": [
-                  "speciality_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
             "name": "Field of knowledge",
             "comment": "",
             "oldName": "",
@@ -2363,6 +2263,106 @@
               ],
               "oldName": ""
             }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Speciality",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "code",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "code"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "name",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "name"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "fok_id",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "fok_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Speciality_Field of knowledge_1",
+                "fields": [
+                  "fok_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Field of knowledge",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Speciality_ISp Speciality_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "ISp Speciality",
+                "referencedFields": [
+                  "speciality_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
           }
         ]
       }
@@ -2799,9 +2799,9 @@
           "schemaName": "Default",
           "tableName": "International speciality",
           "x": 1260,
-          "y": 620,
+          "y": 680,
           "width": 200,
-          "height": 200,
+          "height": 130,
           "isBold": false,
           "titleColor": {
             "r": 55,
@@ -4022,11 +4022,11 @@
           "vertices": [
             {
               "x": 1245,
-              "y": 660
+              "y": 720
             },
             {
               "x": 1240,
-              "y": 660
+              "y": 720
             },
             {
               "x": 1240,
@@ -4039,7 +4039,7 @@
           ],
           "label": {
             "x": 1261,
-            "y": 662,
+            "y": 722,
             "width": 238,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -4064,11 +4064,11 @@
           "vertices": [
             {
               "x": 1475,
-              "y": 660
+              "y": 720
             },
             {
               "x": 1510,
-              "y": 660
+              "y": 720
             },
             {
               "x": 1510,
@@ -4081,7 +4081,7 @@
           ],
           "label": {
             "x": 1465,
-            "y": 612,
+            "y": 672,
             "width": 272,
             "height": 40,
             "fontName": "Arial Unicode MS",
