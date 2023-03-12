@@ -19,214 +19,6 @@
         "tables": [
           {
             "objectType": "Table_LOGICAL",
-            "name": "Educational plan",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "speciality_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "speciality_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "year",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "year"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Studying plan_Enrollment_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "9月の１日のEnrollment",
-                "referencedFields": [
-                  "educational_plan_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Educational plan_Educational discipline_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Educational discipline",
-                "referencedFields": [
-                  "educational_plan_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Educational plan_Course Duration_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Course Duration",
-                "referencedFields": [
-                  "educational_plan_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "Educational discipline",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "discipline_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "discipline_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "educational_plan_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "educational_plan_id"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Educational discipline_Discipline per Semester_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Discipline per Semester",
-                "referencedFields": [
-                  "ed_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Educational discipline_ED EWTD_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "ED Workload",
-                "referencedFields": [
-                  "ed_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Educational discipline_Attached discipline_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Attached discipline",
-                "referencedFields": [
-                  "ed_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ZeroOrManyRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
             "name": "Course Duration",
             "comment": "",
             "oldName": "",
@@ -373,22 +165,6 @@
                 ],
                 "referencedSchema": "Default",
                 "referencedTable": "EWT - Discipline",
-                "referencedFields": [
-                  "ewt_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Educational work type_Normatives_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Normatives",
                 "referencedFields": [
                   "ewt_id"
                 ],
@@ -614,18 +390,6 @@
                 "defaultValue": "",
                 "comment": "",
                 "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "ewt_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "ewt_id"
               },
               {
                 "objectType": "TableField_LOGICAL",
@@ -1333,7 +1097,7 @@
                 "referencedSchema": "Default",
                 "referencedTable": "Educational plan",
                 "referencedFields": [
-                  "speciality_id"
+                  "ep_id"
                 ],
                 "sourceCardinality": "OneAndOnlyOneRelationship",
                 "targetCardinality": "ManyRelationship",
@@ -2718,6 +2482,238 @@
               ],
               "oldName": ""
             }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Educational discipline",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "discipline_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "discipline_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "educational_plan_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "educational_plan_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "credits",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "credits"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational discipline_Discipline per Semester_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Discipline per Semester",
+                "referencedFields": [
+                  "ed_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational discipline_ED EWTD_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "ED Workload",
+                "referencedFields": [
+                  "ed_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational discipline_Attached discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Attached discipline",
+                "referencedFields": [
+                  "ed_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Educational plan",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ep_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ep_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "year",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "year"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "credits",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "credits"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Studying plan_Enrollment_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "9月の１日のEnrollment",
+                "referencedFields": [
+                  "educational_plan_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational plan_Educational discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educational discipline",
+                "referencedFields": [
+                  "educational_plan_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Educational plan_Course Duration_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Course Duration",
+                "referencedFields": [
+                  "educational_plan_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
           }
         ]
       }
@@ -2840,7 +2836,7 @@
           "x": 1550,
           "y": 1640,
           "width": 200,
-          "height": 110,
+          "height": 130,
           "isBold": false,
           "titleColor": {
             "r": 255,
@@ -2856,7 +2852,7 @@
           "x": 1850,
           "y": 1640,
           "width": 200,
-          "height": 110,
+          "height": 140,
           "isBold": false,
           "titleColor": {
             "r": 255,
@@ -2949,8 +2945,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Normatives",
-          "x": 2660,
-          "y": 1620,
+          "x": 2560,
+          "y": 2150,
           "width": 200,
           "height": 160,
           "isBold": false,
@@ -3264,6 +3260,26 @@
             "b": 192,
             "a": 1
           }
+        },
+        {
+          "type": "note",
+          "name": "Note 5",
+          "x": 1580,
+          "y": 1540,
+          "width": 150,
+          "height": 80,
+          "text": "Опция для кредитов",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
         }
       ],
       "layers": [],
@@ -3834,48 +3850,6 @@
             "x": 2561,
             "y": 1482,
             "width": 291,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Educational work type_Normatives_1",
-          "sourceTableName": "Educational work type",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 2565,
-              "y": 1490
-            },
-            {
-              "x": 2630,
-              "y": 1490
-            },
-            {
-              "x": 2630,
-              "y": 1680
-            },
-            {
-              "x": 2645,
-              "y": 1680
-            }
-          ],
-          "label": {
-            "x": 2555,
-            "y": 1442,
-            "width": 258,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
@@ -4613,11 +4587,11 @@
           "vertices": [
             {
               "x": 1535,
-              "y": 2180
+              "y": 2150
             },
             {
               "x": 1230,
-              "y": 2180
+              "y": 2150
             },
             {
               "x": 1230,
@@ -4630,7 +4604,7 @@
           ],
           "label": {
             "x": 1234,
-            "y": 2132,
+            "y": 2102,
             "width": 311,
             "height": 40,
             "fontName": "Arial Unicode MS",
