@@ -1539,6 +1539,22 @@
                 "targetCardinality": "OneAndOnlyOneRelationship",
                 "comment": "",
                 "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Speciality_ISp Speciality_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "ISp Speciality",
+                "referencedFields": [
+                  "speciality_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
               }
             ],
             "indexes": [],
@@ -1583,7 +1599,24 @@
                 "oldName": "name"
               }
             ],
-            "foreignKeys": [],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Field of knowledge_ISp FoK_1",
+                "fields": [
+                  "code"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "ISp FoK",
+                "referencedFields": [
+                  "fok_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
             "indexes": [],
             "uniques": [],
             "primaryKey": {
@@ -2142,6 +2175,194 @@
               ],
               "oldName": ""
             }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "International speciality",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "code",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "code"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "name",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "name"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "speciality_of",
+                "type": "INT",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "speciality_of"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_International speciality_ISp FoK_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "ISp FoK",
+                "referencedFields": [
+                  "isp_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_International speciality_ISp Speciality_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "ISp Speciality",
+                "referencedFields": [
+                  "isp_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "ISp FoK",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "isp_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "isp_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "fok_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "fok_id"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "isp_id",
+                "fok_id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "ISp Speciality",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "isp_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "isp_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "speciality_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "speciality_id"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "speciality_id",
+                "isp_id"
+              ],
+              "oldName": ""
+            }
           }
         ]
       }
@@ -2270,22 +2491,6 @@
             "r": 255,
             "g": 200,
             "b": 255,
-            "a": 1
-          }
-        },
-        {
-          "type": "table",
-          "schemaName": "Default",
-          "tableName": "9月の１日のEnrollment",
-          "x": 1310,
-          "y": 1620,
-          "width": 200,
-          "height": 210,
-          "isBold": false,
-          "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
             "a": 1
           }
         },
@@ -2556,10 +2761,10 @@
         {
           "type": "note",
           "name": "Note 3",
-          "x": 1710,
-          "y": 930,
+          "x": 1560,
+          "y": 860,
           "width": 150,
-          "height": 150,
+          "height": 80,
           "text": "Интернационализация\r\n",
           "style": "note",
           "noteColor": {
@@ -2586,6 +2791,54 @@
             "r": 190,
             "g": 220,
             "b": 255,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "International speciality",
+          "x": 1260,
+          "y": 620,
+          "width": 200,
+          "height": 200,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "ISp FoK",
+          "x": 1260,
+          "y": 860,
+          "width": 200,
+          "height": 90,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "ISp Speciality",
+          "x": 1540,
+          "y": 680,
+          "width": 200,
+          "height": 90,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
             "a": 1
           }
         }
@@ -2780,48 +3033,6 @@
             "x": 1551,
             "y": 1282,
             "width": 265,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Studying plan_Enrollment_1",
-          "sourceTableName": "Educational plan",
-          "sourceSchemaName": "Default",
-          "lineWidth": 1,
-          "visible": true,
-          "vertices": [
-            {
-              "x": 1535,
-              "y": 1690
-            },
-            {
-              "x": 1500,
-              "y": 1690
-            },
-            {
-              "x": 1500,
-              "y": 1690
-            },
-            {
-              "x": 1525,
-              "y": 1690
-            }
-          ],
-          "label": {
-            "x": 1344,
-            "y": 1642,
-            "width": 201,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
@@ -3761,33 +3972,159 @@
           }
         },
         {
-          "name": "fk_Attached discipline_9月の１日のEnrollment_1",
-          "sourceTableName": "Attached discipline",
+          "name": "fk_Field of knowledge_ISp FoK_1",
+          "sourceTableName": "Field of knowledge",
           "sourceSchemaName": "Default",
           "lineWidth": 1,
           "visible": true,
           "vertices": [
             {
-              "x": 1535,
-              "y": 2150
+              "x": 1245,
+              "y": 1050
             },
             {
-              "x": 1280,
-              "y": 2150
+              "x": 1240,
+              "y": 1050
             },
             {
-              "x": 1280,
-              "y": 1660
+              "x": 1240,
+              "y": 930
             },
             {
-              "x": 1295,
-              "y": 1660
+              "x": 1245,
+              "y": 930
             }
           ],
           "label": {
-            "x": 1234,
-            "y": 2102,
-            "width": 311,
+            "x": 1261,
+            "y": 1012,
+            "width": 217,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_International speciality_ISp FoK_1",
+          "sourceTableName": "International speciality",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1245,
+              "y": 660
+            },
+            {
+              "x": 1240,
+              "y": 660
+            },
+            {
+              "x": 1240,
+              "y": 900
+            },
+            {
+              "x": 1245,
+              "y": 900
+            }
+          ],
+          "label": {
+            "x": 1261,
+            "y": 662,
+            "width": 238,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_International speciality_ISp Speciality_1",
+          "sourceTableName": "International speciality",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1475,
+              "y": 660
+            },
+            {
+              "x": 1510,
+              "y": 660
+            },
+            {
+              "x": 1510,
+              "y": 720
+            },
+            {
+              "x": 1525,
+              "y": 720
+            }
+          ],
+          "label": {
+            "x": 1465,
+            "y": 612,
+            "width": 272,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Speciality_ISp Speciality_1",
+          "sourceTableName": "Speciality",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1765,
+              "y": 1050
+            },
+            {
+              "x": 1780,
+              "y": 1050
+            },
+            {
+              "x": 1780,
+              "y": 750
+            },
+            {
+              "x": 1755,
+              "y": 750
+            }
+          ],
+          "label": {
+            "x": 1761,
+            "y": 1012,
+            "width": 192,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
