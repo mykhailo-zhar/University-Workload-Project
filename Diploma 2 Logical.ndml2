@@ -402,33 +402,26 @@
                 "defaultValue": "",
                 "comment": "",
                 "oldName": "name"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "value",
-                "type": "DECIMAL",
-                "length": 0,
-                "decimals": 2,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "value"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "year",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "year"
               }
             ],
-            "foreignKeys": [],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Normatives_Normative history_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Normative history",
+                "referencedFields": [
+                  "normative_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
             "indexes": [],
             "uniques": [],
             "primaryKey": {
@@ -2714,6 +2707,73 @@
               ],
               "oldName": ""
             }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Normative history",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "normative_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "normative_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "value",
+                "type": "DECIMAL",
+                "length": 0,
+                "decimals": 2,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "value"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "year",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "year"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
           }
         ]
       }
@@ -2945,8 +3005,8 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "Normatives",
-          "x": 2560,
-          "y": 2150,
+          "x": 2700,
+          "y": 1430,
           "width": 200,
           "height": 160,
           "isBold": false,
@@ -3280,6 +3340,22 @@
           "fontSize": 14,
           "isFontBold": false,
           "isFontItalic": false
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Normative history",
+          "x": 2990,
+          "y": 1430,
+          "width": 200,
+          "height": 160,
+          "isBold": false,
+          "titleColor": {
+            "r": 200,
+            "g": 255,
+            "b": 160,
+            "a": 1
+          }
         }
       ],
       "layers": [],
@@ -4648,6 +4724,48 @@
             "x": 775,
             "y": 1902,
             "width": 157,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Normatives_Normative history_1",
+          "sourceTableName": "Normatives",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2915,
+              "y": 1510
+            },
+            {
+              "x": 2950,
+              "y": 1510
+            },
+            {
+              "x": 2950,
+              "y": 1510
+            },
+            {
+              "x": 2975,
+              "y": 1510
+            }
+          ],
+          "label": {
+            "x": 2905,
+            "y": 1462,
+            "width": 229,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
