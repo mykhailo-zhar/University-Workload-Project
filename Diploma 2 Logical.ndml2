@@ -19,110 +19,6 @@
         "tables": [
           {
             "objectType": "Table_LOGICAL",
-            "name": "Discipline",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "name",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "name"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "educational",
-                "type": "BOOL",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "educational"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Discipline_Educational discipline_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Educational discipline",
-                "referencedFields": [
-                  "discipline_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Discipline_EWT - Discipline_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "WT - Discipline",
-                "referencedFields": [
-                  "discipline_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Discipline_Attached discipline_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Attached discipline",
-                "referencedFields": [
-                  "discipline_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ZeroOrManyRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
             "name": "License",
             "comment": "",
             "oldName": "",
@@ -1227,7 +1123,7 @@
                   "id"
                 ],
                 "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
+                "targetCardinality": "OneOrManyRelationship",
                 "comment": "",
                 "oldName": ""
               }
@@ -1328,73 +1224,6 @@
                 "oldName": ""
               }
             ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "ED - Workload",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "ed_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "ed_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "wtd_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "wtd_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "hours",
-                "type": "DECIMAL",
-                "length": 0,
-                "decimals": 1,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "hours"
-              }
-            ],
-            "foreignKeys": [],
             "indexes": [],
             "uniques": [],
             "primaryKey": {
@@ -2246,17 +2075,17 @@
               },
               {
                 "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_Educational discipline_Attached discipline_1",
+                "name": "fk_Educational discipline_[Normative discipline]_1",
                 "fields": [
                   "id"
                 ],
                 "referencedSchema": "Default",
-                "referencedTable": "Attached discipline",
+                "referencedTable": "[Normative discipline]",
                 "referencedFields": [
                   "ed_id"
                 ],
                 "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "ManyRelationship",
                 "comment": "",
                 "oldName": ""
               }
@@ -2506,307 +2335,6 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "AD - Workload",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "wtd_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "wtd_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "ads_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "ads_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "normative_id",
-                "type": "INTEGER",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": true,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "Может быть не указано до момента определения.",
-                "oldName": "normative_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "hours",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "hours"
-              }
-            ],
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_AD Workload_AD per Semester_1",
-                "fields": [
-                  "ads_id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "AD per semester",
-                "referencedFields": [
-                  "id"
-                ],
-                "sourceCardinality": "ManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_AD Workload_EWT - Discipline_1",
-                "fields": [
-                  "wtd_id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "WT - Discipline",
-                "referencedFields": [
-                  "id"
-                ],
-                "sourceCardinality": "ManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_AD Workload_Calculated workload_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Calculated workload",
-                "referencedFields": [
-                  "workload_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_AD Workload_Educators' workload_1",
-                "fields": [
-                  "id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Educators' workload",
-                "referencedFields": [
-                  "adw_id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "ManyRelationship",
-                "comment": "",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_LOGICAL",
-                "name": "fk_AD - Workload_Normatives group_1",
-                "fields": [
-                  "normative_id"
-                ],
-                "referencedSchema": "Default",
-                "referencedTable": "Normatives group",
-                "referencedFields": [
-                  "id"
-                ],
-                "sourceCardinality": "OneAndOnlyOneRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "comment": "",
-                "oldName": ""
-              }
-            ],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "Normative",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "ng_id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "ng_id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "value",
-                "type": "DECIMAL",
-                "length": 0,
-                "decimals": 2,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "value"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "year",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "year"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "argument",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "Номер аргумента в функции просчёта",
-                "oldName": "argument"
-              }
-            ],
-            "foreignKeys": [],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "[Normative discipline]",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              }
-            ],
-            "foreignKeys": [],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
-            "name": "[Independent work]",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INTEGER",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              }
-            ],
-            "foreignKeys": [],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
             "name": "Attached discipline",
             "comment": "",
             "oldName": "",
@@ -2902,6 +2430,557 @@
                 ],
                 "sourceCardinality": "ManyRelationship",
                 "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Attached discipline_[Normative discipline]_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "[Normative discipline]",
+                "referencedFields": [
+                  "ad_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "[Normative discipline]",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ed_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "У одной дисциплины(Unique)",
+                "oldName": "ed_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ad_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ad_id"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [
+              {
+                "objectType": "Unique_LOGICAL",
+                "name": "U_ED",
+                "fields": [
+                  "ed_id"
+                ],
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "ed_id",
+                "ad_id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "[Independent work]",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "discipline_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "У одной дисциплины(Unique)",
+                "oldName": "discipline_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ad_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ad_id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_[Independent work]_Attached discipline_1",
+                "fields": [
+                  "ad_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Attached discipline",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [
+              {
+                "objectType": "Unique_LOGICAL",
+                "name": "Unique_Discipline",
+                "fields": [
+                  "discipline_id"
+                ],
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "discipline_id",
+                "ad_id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "AD - Workload",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "wtd_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "wtd_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ads_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ads_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "normative_id",
+                "type": "INTEGER",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "Может быть не указано до момента определения.",
+                "oldName": "normative_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "quantity",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "quantity"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD Workload_AD per Semester_1",
+                "fields": [
+                  "ads_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "AD per semester",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD Workload_EWT - Discipline_1",
+                "fields": [
+                  "wtd_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "WT - Discipline",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD Workload_Calculated workload_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Calculated workload",
+                "referencedFields": [
+                  "workload_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD Workload_Educators' workload_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educators' workload",
+                "referencedFields": [
+                  "adw_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_AD - Workload_Normatives group_1",
+                "fields": [
+                  "normative_id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Normatives group",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "ED - Workload",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ed_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ed_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "wtd_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "wtd_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "quantity",
+                "type": "DECIMAL",
+                "length": 0,
+                "decimals": 1,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "quantity"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Normative",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ng_id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ng_id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "quantity",
+                "type": "DECIMAL",
+                "length": 0,
+                "decimals": 2,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "quantity"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "year",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "year"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "argument",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "Номер аргумента в функции просчёта",
+                "oldName": "argument"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Discipline",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "name",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "name"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "educational",
+                "type": "BOOL",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "educational"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Discipline_Educational discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Educational discipline",
+                "referencedFields": [
+                  "discipline_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Discipline_EWT - Discipline_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "WT - Discipline",
+                "referencedFields": [
+                  "discipline_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Discipline_[Independent work]_1",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "[Independent work]",
+                "referencedFields": [
+                  "discipline_id"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ManyRelationship",
                 "comment": "",
                 "oldName": ""
               }
@@ -3185,9 +3264,9 @@
           "height": 110,
           "isBold": false,
           "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
+            "r": 157,
+            "g": 196,
+            "b": 227,
             "a": 1
           }
         },
@@ -3337,9 +3416,9 @@
           "height": 110,
           "isBold": false,
           "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
+            "r": 35,
+            "g": 82,
+            "b": 120,
             "a": 1
           }
         },
@@ -3353,9 +3432,9 @@
           "height": 90,
           "isBold": false,
           "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
+            "r": 35,
+            "g": 82,
+            "b": 120,
             "a": 1
           }
         },
@@ -3369,9 +3448,9 @@
           "height": 90,
           "isBold": false,
           "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
+            "r": 35,
+            "g": 82,
+            "b": 120,
             "a": 1
           }
         },
@@ -3437,9 +3516,9 @@
           "height": 120,
           "isBold": false,
           "titleColor": {
-            "r": 55,
-            "g": 131,
-            "b": 192,
+            "r": 157,
+            "g": 196,
+            "b": 227,
             "a": 1
           }
         },
@@ -3543,10 +3622,10 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "[Normative discipline]",
-          "x": 1680,
+          "x": 1600,
           "y": 1600,
           "width": 200,
-          "height": 80,
+          "height": 110,
           "isBold": false,
           "titleColor": {
             "r": 175,
@@ -3578,8 +3657,8 @@
         {
           "type": "note",
           "name": "Note 9",
-          "x": 2060,
-          "y": 1990,
+          "x": 1860,
+          "y": 2050,
           "width": 310,
           "height": 290,
           "text": "По умолчанию, если для указанного вида работ есть только одна нормативная группа, то она привязывается к нагрузке АВТОМАТИЧЕСКИ. \r\n\r\n---\r\n\r\nДжигов: Миша, а ведь мы говорили о том, чтобы привязывать нормативы хотим к видам работ по \"scope: нагрузка\", чтобы использовать эти значения при расчете, а на этом этапе \"scope: рабочий план\". \r\n\r\n---\r\n\r\nНадо подосмыслить алгоритм и как на что подвязывать, а то реально путаница выходит(\r\n\r\n",
@@ -3599,10 +3678,10 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "[Independent work]",
-          "x": 2010,
-          "y": 1710,
+          "x": 2000,
+          "y": 1690,
           "width": 200,
-          "height": 80,
+          "height": 120,
           "isBold": false,
           "titleColor": {
             "r": 175,
@@ -3610,26 +3689,6 @@
             "b": 231,
             "a": 1
           }
-        },
-        {
-          "type": "note",
-          "name": "Note 7",
-          "x": 1840,
-          "y": 1630,
-          "width": 220,
-          "height": 100,
-          "text": "!!! Формализовать !!!\r\nнормально и реализовать корректные связи",
-          "style": "note",
-          "noteColor": {
-            "r": 255,
-            "g": 200,
-            "b": 255,
-            "a": 1
-          },
-          "fontName": "Arial Unicode MS",
-          "fontSize": 14,
-          "isFontBold": false,
-          "isFontItalic": false
         }
       ],
       "layers": [],
@@ -4375,102 +4434,6 @@
           }
         },
         {
-          "name": "fk_Educational discipline_Attached discipline_1",
-          "sourceTableName": "Educational discipline",
-          "sourceSchemaName": "Default",
-          "lineWidth": 3,
-          "visible": true,
-          "lineColor": {
-            "r": 255,
-            "g": 157,
-            "b": 157,
-            "a": 1
-          },
-          "vertices": [
-            {
-              "x": 1845,
-              "y": 1420
-            },
-            {
-              "x": 1790,
-              "y": 1420
-            },
-            {
-              "x": 1790,
-              "y": 1830
-            },
-            {
-              "x": 1475,
-              "y": 1830
-            }
-          ],
-          "label": {
-            "x": 1553,
-            "y": 1372,
-            "width": 302,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
-          "name": "fk_Discipline_Attached discipline_1",
-          "sourceTableName": "Discipline",
-          "sourceSchemaName": "Default",
-          "lineWidth": 3,
-          "visible": true,
-          "lineColor": {
-            "r": 255,
-            "g": 157,
-            "b": 157,
-            "a": 1
-          },
-          "vertices": [
-            {
-              "x": 2685,
-              "y": 1610
-            },
-            {
-              "x": 2100,
-              "y": 1610
-            },
-            {
-              "x": 2100,
-              "y": 1870
-            },
-            {
-              "x": 1475,
-              "y": 1870
-            }
-          ],
-          "label": {
-            "x": 2469,
-            "y": 1562,
-            "width": 226,
-            "height": 40,
-            "fontName": "Arial Unicode MS",
-            "fontSize": 14,
-            "fontColor": {
-              "r": 51,
-              "g": 51,
-              "b": 51,
-              "a": 1
-            },
-            "isFontBold": false,
-            "isFontItalic": false,
-            "isVisible": false
-          }
-        },
-        {
           "name": "fk_Attached discipline_AD per Semester_1",
           "sourceTableName": "Attached discipline",
           "sourceSchemaName": "Default",
@@ -4479,11 +4442,11 @@
           "vertices": [
             {
               "x": 1475,
-              "y": 1900
+              "y": 1910
             },
             {
               "x": 1530,
-              "y": 1900
+              "y": 1910
             },
             {
               "x": 1530,
@@ -4496,7 +4459,7 @@
           ],
           "label": {
             "x": 1465,
-            "y": 1852,
+            "y": 1862,
             "width": 274,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5009,11 +4972,11 @@
           "vertices": [
             {
               "x": 2915,
-              "y": 1920
+              "y": 1930
             },
             {
               "x": 2940,
-              "y": 1920
+              "y": 1930
             },
             {
               "x": 2940,
@@ -5026,7 +4989,7 @@
           ],
           "label": {
             "x": 2801,
-            "y": 1872,
+            "y": 1882,
             "width": 229,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5059,11 +5022,11 @@
             },
             {
               "x": 2940,
-              "y": 1900
+              "y": 1920
             },
             {
               "x": 2915,
-              "y": 1900
+              "y": 1920
             }
           ],
           "label": {
@@ -5088,12 +5051,12 @@
           "name": "fk_AD - Workload_Normatives group_1",
           "sourceTableName": "AD - Workload",
           "sourceSchemaName": "Default",
-          "lineWidth": 3,
+          "lineWidth": 1,
           "visible": true,
           "lineColor": {
-            "r": 68,
-            "g": 202,
-            "b": 78,
+            "r": 0,
+            "g": 0,
+            "b": 0,
             "a": 1
           },
           "vertices": [
@@ -5119,6 +5082,174 @@
             "y": 1942,
             "width": 267,
             "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Educational discipline_[Normative discipline]_1",
+          "sourceTableName": "Educational discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1845,
+              "y": 1410
+            },
+            {
+              "x": 1830,
+              "y": 1410
+            },
+            {
+              "x": 1830,
+              "y": 1640
+            },
+            {
+              "x": 1815,
+              "y": 1640
+            }
+          ],
+          "label": {
+            "x": 1537,
+            "y": 1362,
+            "width": 318,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Attached discipline_[Normative discipline]_1",
+          "sourceTableName": "Attached discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1475,
+              "y": 1890
+            },
+            {
+              "x": 1530,
+              "y": 1890
+            },
+            {
+              "x": 1530,
+              "y": 1670
+            },
+            {
+              "x": 1585,
+              "y": 1670
+            }
+          ],
+          "label": {
+            "x": 1465,
+            "y": 1842,
+            "width": 300,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Discipline_[Independent work]_1",
+          "sourceTableName": "Discipline",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 2685,
+              "y": 1610
+            },
+            {
+              "x": 2450,
+              "y": 1610
+            },
+            {
+              "x": 2450,
+              "y": 1740
+            },
+            {
+              "x": 2215,
+              "y": 1740
+            }
+          ],
+          "label": {
+            "x": 2466,
+            "y": 1562,
+            "width": 229,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_[Independent work]_Attached discipline_1",
+          "sourceTableName": "[Independent work]",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1985,
+              "y": 1760
+            },
+            {
+              "x": 1580,
+              "y": 1760
+            },
+            {
+              "x": 1580,
+              "y": 1900
+            },
+            {
+              "x": 1475,
+              "y": 1900
+            }
+          ],
+          "label": {
+            "x": 1708,
+            "y": 1712,
+            "width": 287,
+            "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
             "fontColor": {
